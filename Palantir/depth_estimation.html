@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
+    <title>PalantirDepth</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
+</head>
+
+        <!-- you should probably put some google analytics / meta bits and pieces
+	    here : PRH 
+    <meta property="og:title" content="Paul Hill's Website"> etc.
+      <script async src="https://www.googletagmanager.com/gtag/js?id=??????????"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '??????????');
+  </script>
+    -->
+
+<body id="page-top">
+    <div class="page-container">
+        <div class="inner">
+            <div class="container">
+                <div class="row">
+                    <div class="row vertical-align">
+  
+                        <div class="col-md-10">
+                            <div class="title">
+                                <h1>Fast Depth Estimation for View Synthesis</h1>
+                                <div class="container-sm">
+                                    <div class="row justify-content-md-center">
+                                        <div class="col-sm-auto">
+                                            <p><a href='https://pui-nantheera.github.io/'>N. Anantrasirichai</a></p>
+                                            <p>University of Bristol</p>
+                                        </div>
+                                        <div class="col-sm-auto">
+                                            <p><a href='https://www.braendler.com/'>Majid Geravand</a></p>
+                                            <p>Braendler Engineering</p>
+                                        </div>
+                                        <div class="col-sm-auto">
+                                            <p><a href='https://www.braendler.com/'>David Braendler</a></p>
+                                            <p>Braendler Engineering</p>
+                                        </div>
+                                        <div class="col-sm-auto">
+                                            <p><a href='http://www.bristol.ac.uk/engineering/people/david-r-bull/index.html'>D.R. Bull</a></p>
+                                            <p>University of Bristol</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+			<div class="col-md-2">
+			    <p><a href='https://www.bristol.ac.uk'><img src="../uob-logo.svg" width="100%" height="20%" alt=""></a></p>
+			    <p><a href='https://www.bristol.ac.uk/vision-institute'><img src="../bvilogo.svg" width="100%" height="20%" alt=""></a></p>
+			     <p><a href='https://vilab.blogs.bristol.ac.uk'><img src="../VIL_logo.svg" width="100%" height="20%" alt=""></a></p>
+			    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-md">
+                <p><img src="reconright.jpg" width="100%" /></p>
+                <h2>About</h2>
+                <p>This work is part of the <a href='https://www.braendler.com/project-innovateuk'>project</a> developing roboticised inspection systems that take people out of dangerous working environments. Palintir enables the remote capture of precise 3D data from harsh industrial spaces (eg offshore turbines) utilizing drones, ROVs, and crawlers.  Enhanced AI analysis then produces fast and accurate inspection results through an intuitive software interface. </p>
+		<dl>
+			<dt>Funder</dt>
+			<dd>Innovate UK ref 103990</dd>
+		</dl>
+            </div>
+            <hr />
+            <div class="container-md">
+
+                <h2>Abstract</h2>
+                <p> Disparity/depth estimation from sequences of stereo
+images is an important element in 3D vision. Owing to occlusions, imperfect settings and homogeneous luminance, accurate
+estimate of depth remains a challenging problem. Targetting view
+synthesis, we propose a novel learning-based framework making use of dilated convolution, densely connected convolutional
+modules, compact decoder and skip connections. The network
+is shallow but dense, so it is fast and accurate. Two additional
+contributions - a non-linear adjustment of the depth resolution
+and the introduction of a projection loss, lead to reduction of
+estimation error by up to 20% and 25% respectively. The results
+show that our network outperforms state-of-the-art methods with
+an average improvement in accuracy of depth estimation and
+view synthesis by approximately 45% and 34% respectively.
+Where our method generates comparable quality of estimated
+depth, it performs 10 times faster than those methods. </p>
+            </div>
+            <hr />
+            <div class="container-md">
+                <h2 id="achitecture">Achitecture</h2>
+                <p><img src="network_structure.png" width="100%" /></p>
+            </div>    
+            <hr />
+            <div class="container-md">
+                <h2 id="poster">Talk</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/BMA0RylaN7Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                
+            </div>
+            <hr />
+            <div class="container-md">
+                <h2 id="downloads">Downloads</h2>
+                <ul>
+                    <li>Paper <a href="https://ieeexplore.ieee.org/document/9287371">[PDF]</a> <a href="https://arxiv.org/pdf/2003.06637.pdf">[ArXiv]</a></li>
+                    <li>Presentation <a href="https://uob-my.sharepoint.com/:b:/g/personal/eexna_bristol_ac_uk/Edb1mT1cg1dIt8xwhbZD7wIBYkn58eUfRsf2mrvnjbLr_Q?e=EBkyao">[Slides]</a></li>
+                </ul>
+            </div>
+            <div class="container-md">
+                <h2>Code</h2>
+                <ul>
+                    <li><a href='https://github.com/pui-nantheera/DepthEstimation'>Code for depth estimation for view synthesis</a> </li>
+                </ul>
+            </div>
+            <div class="container-md">
+                <h2>Citation</h2>
+                <pre class="citation">
+@INPROCEEDINGS{9287371,
+  author={N. {Anantrasirichai} and M. {Geravand} and D. {Braendler} and D. R. {Bull}},
+  booktitle={2020 28th European Signal Processing Conference (EUSIPCO)}, 
+  title={Fast Depth Estimation for View Synthesis}, 
+  year={2021},
+  pages={575-579},
+  doi={10.23919/Eusipco47968.2020.9287371}}</pre>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
