@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
+    <title>Ground_deformation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
+</head>
+
+        <!-- you should probably put some google analytics / meta bits and pieces
+	    here : PRH 
+    <meta property="og:title" content="Paul Hill's Website"> etc.
+      <script async src="https://www.googletagmanager.com/gtag/js?id=??????????"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '??????????');
+  </script>
+    -->
+
+<body id="page-top">
+    <div class="page-container">
+        <div class="inner">
+            <div class="container">
+                <div class="row">
+                    <div class="row vertical-align">
+  
+                        <div class="col-md-10">
+                            <div class="title">
+                                <h1>Dynamic Ground Motion Map of the UK </h1>
+                                <div class="container-sm">
+                                    <div class="row justify-content-md-center">
+                                        <div class="col-sm-auto">
+                                            <p><a href='https://pui-nantheera.github.io/'>N. Anantrasirichai</a></p>
+                                            <p><a href='https://research-information.bris.ac.uk/en/persons/alin-m-achim'>Alin Achim</a></p>
+                                            <p><a href='http://www.bristol.ac.uk/engineering/people/david-r-bull/index.html'>D.R. Bull</a></p>
+                                            <p>Vi-Lab, University of Bristol</p>
+                                        </div>
+                                        <div class="col-sm-auto">
+                                            <p><a href='https://www.bristol.ac.uk/people/person/Juliet-Biggs-57455bd8-0db3-4a58-a4e0-e89885fd5466/'>Juliet Biggs</a></p>
+                                            <p>School of Earth Sciences</p>
+                                            <p>University of Bristol</p>
+                                        </div>
+                                        <div class="col-sm-auto">
+                                            <p>Krisztina Kelevitz</p>
+                                            <p>Zahra Sadeghi</p>
+                                            <p>Tim Wright</p>
+                                            <p>COMET, University of Leeds</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+			<div class="col-md-2">
+			    <p><a href='https://www.bristol.ac.uk'><img src="../uob-logo.svg" width="100%" height="20%" alt=""></a></p>
+			    <p><a href='https://www.bristol.ac.uk/vision-institute'><img src="../bvilogo.svg" width="100%" height="20%" alt=""></a></p>
+			     <p><a href='https://vilab.blogs.bristol.ac.uk'><img src="../VIL_logo.svg" width="100%" height="20%" alt=""></a></p>
+			    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-md">
+                <h2>Aim</h2>
+                <p>To explore the ways in which the existing sensor network, defined as Sentinel-1 radar data combined with UK-expertise in InSAR processing and analysis, could be used to address the environmental challenges posed by ground motion due to range of sources. The project explores how dynamic ground motion maps could be integrated into a Digital Environment through combination with other digital infrastructure and the use of environment-focussed informatics for data handling, feature extraction, data fusion, and decision making. </p>
+
+        <div class="row">
+        <div class="col">
+        <dt>Funder</dt>
+            <dd>NERC Constructing a Digital Environment</dd>
+        </div>
+        <div class="col">
+        <dt>Collaborators</dt>
+            <dd><a href="https://comet.nerc.ac.uk/">COMET</a>, <a href="https://satsense.com/">SatSense</a></dd>
+        </div>
+        </div>
+            </div>
+            <hr />
+            <div class="container-md">
+                <p><img src="detect_result.png" width="100%" /></p>
+
+                <h2 style="margin-top: 1em;">Detecting Ground Deformations in the Built Environment</h2>
+                <p> The large volumes of Sentinel-1 data produced over Europe are being used to develop pan-national ground motion services. However, simple analysis techniques like thresholding cannot detect and classify complex deformation signals reliably making providing usable information to a broad range of non- expert stakeholders a challenge. Here we explore the applicability of deep learning approaches by adapting a pre-trained convolu- tional neural network (CNN) to detect deformation in a national- scale velocity field. For our proof-of-concept, we focus on the UK where previously identified deformation is associated with coal- mining, ground water withdrawal, landslides and tunnelling. The sparsity of measurement points and the presence of spike noise make this a challenging application for deep learning networks, which involve calculations of the spatial convolution between im- ages. Moreover, insufficient ground truth data exists to construct a balanced training data set, and the deformation signals are slower and more localised than in previous applications. We propose three enhancement methods to tackle these problems: i) spatial interpolation with modified matrix completion, ii) a synthetic training dataset based on the characteristics of the real UK velocity map, and iii) enhanced over-wrapping techniques. Using velocity maps spanning 2015-2019, our framework detects several areas of coal mining subsidence, uplift due to dewatering, slate quarries, landslides and tunnel engineering works. The results demonstrate the potential applicability of the proposed framework to the development of automated ground motion analysis systems. </p>
+            </div>
+            <hr />
+            <div class="container-md">
+                <h2 id="poster">Talk</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/PjusJVrarcg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                
+            </div>
+            <hr />
+            <div class="container-md">
+                <h2 id="downloads">Downloads</h2>
+                <ul>
+                    <li>Paper <a href="https://ieeexplore.ieee.org/abstract/document/9181454">[PDF]</a> <a href="https://eartharxiv.org/repository/view/244/">[EarthArXiv]</a></li>
+                </ul>
+            </div>
+            <hr />
+            <div class="container-md">
+                <h2>Citation</h2>
+                <pre class="citation">
+@ARTICLE{9181454,
+  author={N. {Anantrasirichai} and J. {Biggs} and K. {Kelevitz} and Z. {Sadeghi} and T. {Wright} and J. {Thompson} and A. M. {Achim} and D. {Bull}},
+  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
+  title={Detecting Ground Deformation in the Built Environment Using Sparse Satellite InSAR Data With a Convolutional Neural Network}, 
+  year={2020},
+  volume={},
+  number={},
+  pages={1-11},
+  doi={10.1109/TGRS.2020.3018315}}
+  </pre>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
