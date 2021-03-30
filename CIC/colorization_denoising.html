@@ -115,6 +115,18 @@ is robust to variations in brightness levels and noise. </p>
                 <ul>
                     <li>Paper <a href="https://arxiv.org/abs/2101.01597">[PDF]</a> <a href="https://arxiv.org/pdf/2101.01597.pdf">[ArXiv]</a></li>
                     <li>Datasets <a href="https://uob-my.sharepoint.com/:f:/g/personal/eexna_bristol_ac_uk/EtNnQF27RHFCqgqp9UA3-nwBzLFBi6jFVbCZIEB8yr_OJA?e=mFgNAy">[Unpaired videos]</a> </li>
+                    <p> These datasets were captured by <a href="http://www.espritfilm.co.uk/">Esprit film and television</a>, and <a href="https://www.bbc.co.uk/showsandtours/venue/bbc-bristol">BBC Bristol</a>,  using RED Gemini cameras in R3D format.
+To extract into frames, you may use REDCINE-X Pro software or REDline for command line as follows.</p>
+<pre class="citation">
+VID_DIR="/data"
+VIDS=$VID_DIR/*.R3D
+for VID_NAME in $VIDS; do
+    VID_BASENAME=${VID_NAME##*/}
+    VID_BASENAME=${VID_BASENAME%.*}
+    ISO=$(REDline --i $VID_NAME --useMeta --printMeta 1 |grep '^ISO'| awk '{ print $2 }')
+    REDline -i $VID_NAME --format 1 --outDir "$EXPORT_DIR/$VID_BASENAME" --iso $ISO --NR 0 
+done
+</pre>
                     <li>Additional datasets <a href="https://malalejandra.github.io/low-light-dataset/">[Paired images]</a> </li>
                 </ul>
             </div>
@@ -122,7 +134,7 @@ is robust to variations in brightness levels and noise. </p>
             <div class="container-md">
                 <h2>Citation</h2>
                 <pre class="citation">
-@INPROCEEDINGS{Anantrasirichai:Contextual;2021,
+@INPROCEEDINGS{Anantrasirichai:Contextual:2021,
   author={N. {Anantrasirichai} and D. R. {Bull}},
   booktitle={arXiv:2101.01597}, 
   title={Contextual colorization and denoising for low-light ultra high resolution sequences}, 
