@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
+    <title>MyUnderwaterWorld</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+        <!-- you should probably put some google analytics / meta bits and pieces
+	    here : PRH 
+    <meta property="og:title" content="Paul Hill's Website"> etc.
+      <script async src="https://www.googletagmanager.com/gtag/js?id=??????????"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '??????????');
+  </script>
+    -->
+
+<body id="page-top">
+    <div class="page-container">
+        <div class="inner">
+            <div class="container">
+                <div class="row">
+                    <div class="row vertical-align">
+  
+                        <div class="col-md-10">
+                            <div class="title">
+                                <h1>B-Line Quantification in Lung Ultrasound Images</h1>
+                                <h4>Using both Traditional Model-based and Deep Learning Techniques</h4>
+                            </div>
+                        </div>
+			<div class="col-md-2">
+			    <p><a href='https://www.bristol.ac.uk'><img src="../uob-logo.svg" width="100%" height="20%" alt=""></a></p>
+			    <p><a href='https://www.bristol.ac.uk/vision-institute'><img src="../bvilogo.svg" width="100%" height="20%" alt=""></a></p>
+			     <p><a href='https://vilab.blogs.bristol.ac.uk'><img src="../VIL_logo.svg" width="100%" height="20%" alt=""></a></p>
+			    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-md">
+                <p align="center"><img src="teaser_blines.jpg" width="95%" /></p>
+                <p align="right">(Red) Pleural lines, (Green) B-lines</p>
+
+                <h2 id="aim">Aim</h2>
+                <p>This project aims to develop an objective tool to determine fluid overload in children receiving dialysis. B-lines, defined as discrete laser-like vertical hyperechoic reverberation artefacts in lung ultrasounds, have been shown to correlate with extravascular lung water in symptomatic and asymptomatic adults and children on dialysis. Recent studies have shown this technique to be useful in children on dialysis. </p>
+
+                <p>We explore </p>
+                <ul>
+                <li>Traditional model-based technique: <a href='https://pui-nantheera.github.io/BLINE/'>Pulmonary Ultrasound Image analysis method (PUI)</a>, <a href='https://github.com/oktaykarakus/QuantLUS-CPS-v1.0'>Quantification in lung ultrasound images of COVID-19 patients (QuantLUS - CPS)</a></li> 
+                <li>Deep learning technique: <a href='https://ieeexplore.ieee.org/abstract/document/10230502/'>Semi-supervised learning</a> </li>
+                <li>Deep unfolding techniques: <a href='https://arxiv.org/abs/2311.06672'>Deep Unfolding Network for B-line Detection (DUBLINE)</a>, <a href='https://arxiv.org/pdf/2407.10667'>Deep Unfolding the Cauchy Proximal Splitting algorithm (DUCPS)</a></li>
+                </ul>
+
+        <div class="row">
+        <div class="col">
+        <dt>Collaborators</dt>
+            <dd>Careggi University Hospital, School of Computer Science and Informatics (Cardiff University), Great Ormond Street Hospital</dd>
+        </div>
+        </div> <!--
+        <div class="row">
+        <div class="col">
+        <dt>Funder</dt>
+            <dd>EPSRC ECR International Collaboration Grant (EP/Y002490/1), UKRI <a href='https://www.myworld-creates.com/' target="_blank">MyWorld</a> Strength in Places Programme (SIPF00006/1)</dd>
+        </div>
+        </div> -->
+        <hr />
+        <div class="row">
+        <div class="col">
+        <h2 id="downloads">Research team</h2>
+            <!-- <h5 id="coreteam">Core</h5> -->
+            <ul>
+                <li><a href='https://research-information.bris.ac.uk/en/persons/alin-m-achim'>Alin Achim</a> and <a href='https://pui-nantheera.github.io/'>N. Anantrasirichai</a>: Lead academics</li>
+                <li><a href='https://oktaykarakus.github.io/'>Oktay Karakuş</a> and <a href='https://scholar.google.it/citations?user=1so1EDEAAAAJ&hl=it'>Marco Allinovi</a>: Collaborators</li>
+                <li><a href='https://scholar.google.com/citations?user=0qp4t7YAAAAJ&hl=en'>Tianqi Yang</a>: PhD student</li>
+            </ul>
+          
+        </div>
+        </div>
+        <hr />    
+        <h2 id="downloads">Methods</h2>
+        <div class="row">
+        <div class="col">
+        
+            <!-- <h5 id="coreteam">Core</h5> -->
+            <ul>
+                <li><a href='https://pui-nantheera.github.io/BLINE/'>Pulmonary Ultrasound Image analysis method (PUI)</a> <p align="left"><img src="PUI_diagram.jpg" width="50%" /></p></li>
+                <li><a href='https://github.com/oktaykarakus/QuantLUS-CPS-v1.0'>Quantification in lung ultrasound images of COVID-19 patients (QuantLUS - CPS)</a><p align="left"><img src="lung_COVID19_diagram.jpg" width="90%" /></p></li>
+                <li><a href='https://ieeexplore.ieee.org/abstract/document/10230502/'>Semi-supervised learning</a> <p align="left"><img src="semilearning_diagram.jpg" width="90%" /></li>
+                
+            </ul>
+          
+        </div>
+        <div class="col">
+            <ul>
+                <li><a href='https://arxiv.org/abs/2311.06672'>Deep Unfolding Network for B-line Detection (DUBLINE)</a><p align="left"><img src="DUBLINE_diagram.jpg" width="80%" /></p></li>
+                <li><a href='https://arxiv.org/pdf/2407.10667'>Deep Unfolding the Cauchy Proximal Splitting algorithm (DUCPS)</a><p align="left"><img src="DUCPS_diagram.jpg" width="95%" /></p></li>
+                
+            </ul>
+          
+        </div>
+        </div>
+            </div>
+            <hr />
+            
+            <div class="container-md">
+                <h2 id="downloads">Downloads</h2>
+                <h5 id="UGteam">Publications</h5> 
+                <ul>
+                    <li><a>DUBLINE: A Deep Unfolding Network for B-line Detection in Lung Ultrasound Imagesy</a>. T Yang, N Anantrasirichai, O Karakuş, M Allinovi, HC Koydemir, A Achim. IEEE International Symposium on Biomedical Imaging. 2024 <pdf>[</pdf><a href="https://arxiv.org/pdf/2311.06672">PDF</a><pdf>]</pdf> </li>
+                    <li><a>A Semi-supervised Learning Approach for B-line Detection in Lung Ultrasound Images</a>. T Yang, N Anantrasirichai, O Karakuş, M Allinovi, A Achim, IEEE International Symposium on Biomedical Imaging. 2023. <pdf>[</pdf><a href="https://arxiv.org/pdf/2211.14050.pdf">PDF</a><pdf>]</pdf> </li>
+                    <li><a>Current Advances in Computational Lung Ultrasound Imaging: A Review</a>. T. Yang, O. Karakuş, N. Anantrasirichai, and A. Achim.  IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control. 2023. <pdf>[</pdf><a href="https://link.springer.com/article/10.1007/s00445-022-01608-x">PDF</a><pdf>]</pdf> 
+                    <li><a>Detection of Line Artefacts in Lung Ultrasound Images of COVID-19 Patients via Non-Convex Regularization</a>. O. Karakuş, N. Anantrasirichai, A. Aguersif, S. Silva, A. Basarab and A Achim. IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control. 2020. <pdf>[</pdf><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9165792">PDF</a><pdf>]</pdf> <pdf>[</pdf><a href="https://ieeexplore.ieee.org/document/9165792" target="_blank">BibTeX</a><pdf>]</pdf> [<a href="https://github.com/oktaykarakus/QuantLUS-CPS-v1.0" target="_blank">CODE</a>]</li>
+                    <li><a >Regularisation With a Dictionary of Lines for Medical Ultrasound Image Deconvolution</a>. N. Anantrasirichai, M. Allinovi, W. Hayes, A. Achim. In Proceedings of the IEEE International Symposium on Biomedical Imaging. 2019. <pdf>[</pdf><a href="https://seis.bristol.ac.uk/~eexna\papers\ISBI2019.pdf">PDF</a><pdf>]</pdf> <pdf>[</pdf><a href="https://ieeexplore.ieee.org/document/8759185" target="_blank">BibTeX</a><pdf>]</pdf> [<a href="https://seis.bristol.ac.uk/~eexna\research\BlineDetection.html">Project</a>]</li>
+                    <li><a>Line Detection as an Inverse Problem: Application to Lung Ultrasound Imaging</a>. N. Anantrasirichai, W. Hayes, M. Allinovi, D. Bull, A. Achim. IEEE Transactions on Medical Imaging. 2017 <pdf>[</pdf><a href="https://seis.bristol.ac.uk/~eexna\papers\LineDetection.pdf">PDF</a><pdf>]</pdf> <pdf>[</pdf><a href="http://ieeexplore.ieee.org/abstract/document/7962263/" target="_blank">BibTeX</a><pdf>]</pdf> <pdf>[</pdf><a href="https://github.com/pui-nantheera/BLINE" target="_blank">CODE</a><pdf>]</pdf></li>
+                    <li><a>Line detection in speckle images using Radon transform and l1 regularization</a>. N. Anantrasirichai, M. Allinovi, W. Hayes, A. Achim. In Proceedings of the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). 2017 <pdf>[</pdf><a href="https://seis.bristol.ac.uk/~eexna\papers\LungICASSP2017.pdf">PDF</a><pdf>]</pdf></li>
+                    <li><a>Automatic B-line detection in paediatric lung ultrasound</a>. N. Anantrasirichai, M. Allinovi, W. Hayes, A. Achim. In Proceedings of the IEEE International Conference on Ultrasonics Symposium (IUS 2016). <pdf>[</pdf><a href="https://seis.bristol.ac.uk/~eexna\papers\IUS2106_Blines.pdf">PDF</a><pdf>]</pdf></li>
+                </ul> 
+                <h5 id="UGteam">Datasets</h5> 
+                <ul>
+                    <li>Children's lung ultrasound images used in the <a href='https://pui-nantheera.github.io/BLINE/'>PUI</a> paper [<a href="https://uob-my.sharepoint.com/:f:/g/personal/eexna_bristol_ac_uk/EscmzULhPkJNlAnylITTM4oB3nSK9uJWTkU38H77Jxf26A?e=iSBLpG">dataset</a>] 
+                    
+                </ul> 
+            </div>
+            <hr />
+            
+            
+            <div class="container-md">
+                <h2 id="related">Related research</h2>
+                <h5 id="downloads">Related publications from VI-Lab</h5>
+                <ul>
+                    <li><a>TaGAT: Topology-Aware Graph Attention Network For Multi-modal Retinal Image Fusion</a>. X Tian, N Anantrasirichai, L Nicholson, A Achim. Medical Image Computing and Computer Assisted Intervention. 2024 <pdf>[</pdf><a href="https://arxiv.org/pdf/2407.14188">PDF</a><pdf>]</pdf> <pdf>[</pdf><a target="_blank" href="https://github.com/xintian-99/TaGAT">Code</a><pdf>]</pdf></li>
+                    <li><a>PMT: Partial-Modality Translation Based on Diffusion Models for Prostate Magnetic Resonance and Ultrasound Image Registration</a>. X Ma, N Anantrasirichai, S Bolomytis, A Achim. Medical Image Understanding and Analysis. 2024 <pdf>[</pdf><a href="https://link.springer.com/chapter/10.1007/978-3-031-66958-3_21">PDF</a><pdf>]</pdf> </li>
+                    <li><a>OCT2Confocal: 3D CycleGAN based Translation of Retinal OCT Images to Confocal Microscopy</a>. X Tian, N Anantrasirichai, L Nicholson, A Achim. IEEE International Symposium on Biomedical Imaging. 2024 <pdf>[</pdf><a href="https://arxiv.org/abs/2311.10902">PDF</a><pdf>]</pdf> <pdf>[</pdf><a href="https://github.com/xintian-99/OCT2Confocal_3DCycleGAN">CODE</a><pdf>]</pdf></li>
+                    <li><a>Parasitic Egg Detection and Classification in Low-cost Microscopic Images using Transfer Learning</a>. T Suwannaphong, S Chavana, S Tongsom, D Palasuwan, T H Chalidabhongse, and N Anantrasirichai. SN Computer Science. 2023 <pdf>[</pdf><a href="https://link.springer.com/article/10.1007/s42979-023-02406-8">PDF</a><pdf>]</pdf> <pdf>[</pdf><a target="_blank" href="https://zenodo.org/records/10437395">Dataset</a><pdf>]</pdf></li>
+                    <li><a>ICIP 2022 Challenge on Parasitic Egg Detection and Classification in Microscopic Images: Dataset, Methods and Results</a>. N Anantrasirichai, TH Chalidabhongse, D Palasuwan, K Naruenatthanaset, T Kobchaisawat, N Nunthanasup, K Boonpeng, X Ma,  and A Achim. IEEE International Conference on Image Processing. 2022. <pdf>[</pdf><a href="https://arxiv.org/pdf/2208.06063.pdf">PDF</a><pdf>]</pdf> <pdf>[</pdf><a target="_blank" href="https://ieee-dataport.org/competitions/parasitic-egg-detection-and-classification-microscopic-images">Dataset</a><pdf>]</pdf> <pdf>[</pdf><a target="_blank" href="https://icip2022challenge.piclab.ai/">Website</a><pdf>]</pdf> </li>
+                </ul>
+                <h5 id="downloads">Detection in different modalities</h5>
+                <ul>
+
+                    <li><a>Anomaly detection for the identification of volcanic unrest in satellite imagery</a>. RG Popescu, N Anantrasirichai, J Biggs. IEEE International Conference on Image Processing. 2024 <pdf>[</pdf><a href="https://arxiv.org/pdf/2405.18487">PDF</a><pdf>]</pdf> <pdf>[</pdf><a href="https://twitter.com/mast_erc">Project</a><pdf>]</pdf> </li>
+                    <li><a>Object Recognition in Atmospheric Turbulence Scenes</a>. D Hu, N Anantrasirichai, European Signal Processing Conference. 2023. <pdf>[</pdf><a href="https://arxiv.org/pdf/2210.14318.pdf">PDF</a><pdf>]</pdf> <pdf>[</pdf><a href="https://github.com/disen-hu/FasterRcnn_FPN_DCN">CODE</a><pdf>]</pdf></li>
+                    <li><a>Detecting Ground Deformation in the Built Environment using Sparse Satellite InSAR data with a Convolutional Neural Network</a>. N. Anantrasirichai, J. Biggs, K. Kelevitz, Z. Sadeghi, T. Wright, J. Thompson, A. Achim and D. Bull.  IEEE Transactions on Geoscience and Remote Sensing. 2020. <pdf>[</pdf><a href="https://arxiv.org/pdf/2005.03221.pdf">PDF</a><pdf>]</pdf> [<a href="https://pui-nantheera.github.io/research/NERC/ground_deformation.html">Project</a>]</li>
+                    <li><a>A Deep Learning Approach to Detecting Volcano Deformation from Satellite Imagery using Synthetic Datasets</a>. N. Anantrasirichai, J. Biggs, F. Albino, and David Bull. Remote Sensing of Environment. 2019. <pdf>[</pdf><a href="https://arxiv.org/abs/1905.07286">PDF</a><pdf>]</pdf> <pdf>[</pdf><a href="https://www.sciencedirect.com/science/article/pii/S003442571930183X" target="_blank">BibTeX</a><pdf>]</pdf> [<a href="https://github.com/pui-nantheera/volcano_deform_detection" target="_blank">CODE</a>] [<a href="https://seis.bristol.ac.uk/~eexna\research\volcanicUnrest.html">Project</a>]</li>
+                </ul>
+            </div>
+          
+
+        </div>
+    </div>
+</body>
+
+</html>
