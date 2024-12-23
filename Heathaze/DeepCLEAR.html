@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
    
-    <title>MyUnderwaterWorld</title>
+    <title>DeepCLEAR</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -41,8 +41,9 @@
   
                         <div class="col-md-10">
                             <div class="title">
-                                <h1>MyUnderwaterWorld: Intelligent Underwater Scene Representation</h1>
-                                <h4>Underwater Scene Enhancement and 3D Modelling</h4>
+                                <h1>DeepCLEAR: Intelligent Atmospheric Turbulence Removal and Object Recognition</h1>
+                                <h4><p>AI-Based Methods for Mitigating Atmospheric Distortion </p>
+                                <p>and Enhancing Object Detection and Tracking</p></h4>
                             </div>
                         </div>
 			<div class="col-md-2">
@@ -55,24 +56,17 @@
                 </div>
             </div>
             <div class="container-md">
-                <p><img src="underwater_enh.png" width="100%" /></p>
-                <p align="right">(Left) Raw video by Piyapong Suwannakul and (Right) Processed video using <a href="https://pui-nantheera.github.io/research/CIC/colorization_denoising.html" target="_blank">VI-Lab tools</a>. See video <a href="https://www.youtube.com/embed/sLL2D--731M" target="_blank">HERE</a></p>
+                <p><img src="seeingclearly.png" width="100%" /></p>
 
                 <h2 id="aim">Aim</h2>
-                <p>Our oceans have been explored for hundreds of years and these activities are becoming increasingly important because of the need to  manage and conserve mineral and biological resources effectively, as well as to better understand planetary-scale processes including tectonics and marine hazards.  Exploration and analysis are however always limited by the number of diving experts, technologies, and in particular, costs. Advanced imaging methods now support a new paradigm of remote discovery where onshore experts with specific knowledge, such as geologists, archaeologists and biologists, are able to remotely model and explore underwater scenes. </p>
+                <p>Atmospheric turbulence distorts visual imagery, posing significant challenges for information interpretation by both humans and machines. Traditional approaches to mitigating atmospheric turbulence are predominantly model-based, such as <a href="CLEAR.html">CLEAR</a>, but are computationally intensive and memory-demanding, making real-time operations impractical. In contrast, deep learning-based methods have garnered increasing attention but are currently effective primarily for static scenes. This project proposes novel learning-based frameworks specifically designed to support dynamic scenes.</p>
 
-                <p>Underwater environment represents the combination of several challenges. Water is a dynamic medium and suspended particles move. Light scatter causes blur and halo effects, whilst light absorption leads to colour distortion and reduced contrast. The model of underwater imagery should thus comprise temporally- and spatially-variant distortion, uneven intensity bias,  multiplicative noise, and additive noise. This project aims to exploit underwater image priors to perform 3D mapping process can be done directly from the raw underwater sequences. </p>
+                <p>Our objectives are twofold: (i) to develop real-time video restoration techniques that mitigate spatio-temporal distortions, enhancing the visual interpretation of scenes for human observers, and (ii) to support decision-making by implementing and evaluating real-time object recognition and tracking using the restored video. </p>
 
-        <div class="row">
-        <div class="col">
-        <dt>Collaborators</dt>
-            <dd>National Park Service Submerged Resources Center, Woods Hole Oceanographic Institute, Marine Imaging Technologies, National Oceanic and Atmospheric Administration, Gates Underwater Products, Esprit Film & Television</dd>
-        </div>
-        </div>
         <div class="row">
         <div class="col">
         <dt>Funder</dt>
-            <dd>EPSRC ECR International Collaboration Grant (EP/Y002490/1), UKRI <a href='https://www.myworld-creates.com/' target="_blank">MyWorld</a> Strength in Places Programme (SIPF00006/1)</dd>
+            <dd>UKRI <a href='https://www.myworld-creates.com/' target="_blank">MyWorld</a> Strength in Places Programme (SIPF00006/1), Defence and Security Accelerator (DASA)</dd>
         </div>
         </div>
         <hr />
@@ -82,14 +76,18 @@
             <h5 id="coreteam">Core</h5>
             <ul>
                 <li><a href='https://pui-nantheera.github.io/'>N. Anantrasirichai</a>: Lead academic</li>
-                <li><a href='https://russellllaputa.github.io/'>Guoxi Huang (Edward)</a>: Postdoctoral researcher </li>
-                <li><a href=''>Haoran Wang</a>: PhD student (Co-supervisor: <a href='https://fan-aaron-zhang.github.io/' target="_blank">Aaron Zhang</a>)</li>
+                <li><a href='https://david-bull.github.io/'>D.R. Bull</a> and <a href='https://research-information.bris.ac.uk/en/persons/alin-m-achim'>A. Achim</a>: Co-Lead academics</li>
+                <li><a href='https://csprh.github.io/'>Paul Hill</a>: Postdoctoral researcher [</pdf><a href="https://arxiv.org/pdf/2409.14587">Review paper</a><pdf>] [</pdf><a href="https://zenodo.org/records/13737763">Dataset</a><pdf>] [</pdf><a href="https://arxiv.org/pdf/2402.19041">arXiv</a><pdf>]</li></li>
             </ul>
             <h5 id="UGteam">Undergrad/Postgrad projects</h5>
             <ul>
-                <li>Luca Gough (2023/2024), 3D Representation of Underwater Scenes using Neural Radiance Fields [<a href='https://www.dropbox.com/scl/fi/9nqtjamc0v8qbwjrvsd8r/Luca-Gough-Thesis_Final.pdf?rlkey=imqqhqrvxueostxqceukxskhf&st=b6cpvqej&dl=0' target="_blank">Thesis</a>]</li>
-                <li>George Atkinson (2023/2024), Generative Deep Learning for Temporally Consistent Underwater
-Video Enhancement [<a href='https://www.dropbox.com/scl/fi/hc0cbdqadiqh1lrxo3nxj/George-Atkinson-dissertation_2_.pdf?rlkey=yuvb6xhklrko2v5vohffcfssp&st=b5xqm63l&dl=0' target="_blank">Thesis</a>]</li> 
+
+                <li>Zhicheng (Frederick) Zou (2024), Enhancing Long-Range Imaging through Deep Learning: Mitigating Atmospheric Turbulence [<a href='https://openaccess.thecvf.com/content/ACCV2024/papers/Zou_DeTurb_Atmospheric_Turbulence_Mitigation_with_Deformable_3D_Convolutions_and_3D_ACCV_2024_paper.pdf' target="_blank">Paper</a>]</li>
+                <li>Disen Hu (2022), Atmospheric Turbulence Object Detection in Video Using Deep Learning [<a href='https://eurasip.org/Proceedings/Eusipco/Eusipco2023/pdfs/0000561.pdf' target="_blank">Paper</a>]</li>
+                <li><a href='https://research-information.bris.ac.uk/en/persons/rachel-lin'>Rachel Lin</a> (2022), Dealing with Atmospheric Turbulence Distortion in Video Sequences</li>
+                <li>Haziq I.B.Mohammed Shafri (2020), Multi-Input Denoising for Atmospheric Turbulence Mitigation in Video</li>
+                <li>Jingxuan Wang (2020), Atmospheric turbulence mitigation in video using deep learning</li>
+                <li><a href='https://research-information.bris.ac.uk/en/persons/jing-gao-2'>Jing Gao</a> (2019), Atmospheric turbulence removal using convolutional neural network [<a href='https://arxiv.org/pdf/1912.11350' target="_blank">arXiv</a>]</li> 
             </ul>
         </div>
         </div>
@@ -100,11 +98,14 @@ Video Enhancement [<a href='https://www.dropbox.com/scl/fi/hc0cbdqadiqh1lrxo3nxj
                 <h2 id="downloads">Downloads</h2>
                 <h5 id="UGteam">Publications</h5> 
                 <ul>
-                    <li><a>UW-GS: Distractor-Aware 3D Gaussian Splatting for Enhanced Underwater Scene Reconstruction</a>. H Wang, N Anantrasirichai, F Zhang, D Bull, IEEE/CVF Winter Conference on Applications of Computer Vision. 2025 <pdf>[</pdf><a href="https://arxiv.org/pdf/2410.01517">PDF</a><pdf>]</pdf> </li>
+                    <li><a>Deep Learning Techniques for Atmospheric Turbulence Removal: A Review</a>. P Hill, N Anantrasirichai, A Achim, D Bull. Artificial Intelligence Review. 2025 <pdf>[</pdf><a href="https://arxiv.org/pdf/2409.14587">PDF</a><pdf>]</pdf></li>
+                    <li><a>DeTurb: Atmospheric Turbulence Mitigation with Deformable 3D Convolutions and 3D Swin Transformers</a>. Z. Zou and N. Anantrasirichai, Asian Conference on Computer Vision, 2024 <pdf>[</pdf><a href="https://openaccess.thecvf.com/content/ACCV2024/papers/Zou_DeTurb_Atmospheric_Turbulence_Mitigation_with_Deformable_3D_Convolutions_and_3D_ACCV_2024_paper.pdf">PDF</a><pdf>]</pdf> </li>
+                    <li><a>Atmospheric Turbulence Removal with Complex-Valued Convolutional Neural Network</a>. N. Anantrasirichai, Pattern Recognition Letters. 2023 <pdf>[</pdf><a href="https://www.sciencedirect.com/science/article/pii/S0167865523001447">PDF</a><pdf>]</pdf> </li>
+                    <li><a>Object Recognition in Atmospheric Turbulence Scenes</a>. D. Hu and N. Anantrasirichai, European Signal Processing Conference. 2023. <pdf>[</pdf><a href="https://arxiv.org/pdf/2210.14318.pdf">PDF</a><pdf>]</pdf> <pdf>[</pdf><a href="https://github.com/disen-hu/FasterRcnn_FPN_DCN">CODE</a><pdf>]</pdf></li>
                 </ul> 
                 <h5 id="UGteam">Datasets</h5>
                 <ul>
-                    <li>BVI-Coral: Underwater scenes for 3D reconstruction [<a href="https://zenodo.org/records/11093417">dataset</a>] </li>
+                    <li>BVI-Turb: Atmospheric Turbulence Dataset [<a href="https://zenodo.org/records/13737763">dataset</a>] </li>
                     
                 </ul>
             </div>
@@ -113,6 +114,11 @@ Video Enhancement [<a href='https://www.dropbox.com/scl/fi/hc0cbdqadiqh1lrxo3nxj
             
             <div class="container-md">
                 <h2 id="related">Related research</h2>
+                <h5 id="downloads">Related project</h5>
+                <ul>
+                    <li> <a href="CLEAR.html">CLEAR</a>: Model-based methods for mitigating atmospheric distortions using Dual Tree Complex Wavelet Transform (DT-CWT)</li>
+                </ul>
+
                 <h5 id="downloads">Related publications from VI-Lab</h5>
                 <ul>
                     <li><a href="https://pui-nantheera.github.io/research/CIC/colorization_denoising.html" target="_blank">A unified framework for contextual lighting, colorization and denoising for UHD sequences </a>. N Anantrasirichai and D R Bull. IEEE ICIP, 2021</li>
