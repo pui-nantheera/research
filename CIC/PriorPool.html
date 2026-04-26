@@ -83,8 +83,8 @@
             <ul>
                 <li><a href='https://pui-nantheera.github.io/'>N. Anantrasirichai</a>: Lead academic</li>
                 <li><a href='https://research-information.bris.ac.uk/en/persons/alexandra-malyugina'>Alexandra Malyugina</a>: Postdoctoral researcher, [<a href="https://arxiv.org/abs/2507.08375">Paper1</a>] [<a href="https://arxiv.org/abs/2504.19289">Paper2</a>]</li>
-                <li><a href=''>Yini Li</a>: PhD student (Co-supervisor: <a href='https://david-bull.github.io/' target="_blank">Prof David Bull</a>), <pdf>[</pdf><a href="https://openaccess.thecvf.com/content/WACV2025/hthttps://arxiv.org/abs/2503.11175">Paper</a><pdf>]</pdf> </li>
-                <li>PhD Student [</pdf><a href="https://pui-nantheera.github.io/phd_offer.html">Scholarship</a><pdf>] </li>
+                <li><a href=''>Yini Li (Lynn)</a>: PhD student, 2024-2028 (Co-supervisor: <a href='https://david-bull.github.io/' target="_blank">Prof David Bull</a>), <pdf>[</pdf><a href="https://arxiv.org/abs/2503.11175">Paper1</a><pdf>]</pdf> [<a href="https://arxiv.org/abs/2511.09609">Paper2</a>] </li>
+                <li><a href=''>Zhuodong Jiang (David)</a>: PhD student, 2026-2030 (Co-supervisor: <a href='https://www.bristol.ac.uk/people/person/Alin-Achim-a515a426-727d-480b-8d4e-a4a756d6d8f9/' target="_blank">Prof Alin Achim</a>) </li>
             </ul>
             
         </div> 
@@ -95,18 +95,35 @@
             <h2 id="downloads">Methods</h2>
             <div class="row">
             <div class="col">
-                <li><a>Zero-TIG: Temporal Consistency-Aware Zero-Shot Illumination-Guided Low-light Video Enhancement</a> (EUSIPCO2025) <p><pdf>[</pdf><a href="https://arxiv.org/abs/2503.11175">PDF</a><pdf>]</pdf> [<a href="https://github.com/liyinibristol/Zero-TIG">Code</a>]</p>
-                    <p align="middle"><img src="ZeroTIG.jpg" width="100%" /></p>
-                    <p>This work introduces Zero-TIG, a zero-shot learning approach for low-light video enhancement that combines Retinex theory with optical flow. The network includes an enhancement module, handling denoising, illumination estimation, and reflection removal, and a temporal feedback module that enforces consistency via histogram equalization, optical flow, and image warping. These components enable temporally coherent and visually consistent enhancement without paired training data.</p></li>
+                <li><a>TempRetinex: Retinex-based Unsupervised Enhancement for Low-light Video Under Diverse Lighting Conditions</a> (ICME2026) <p>[<a href="https://arxiv.org/abs/2511.09609">PDF</a>] [<a href="https://github.com/liyinibristol/TempRetinex">Code</a>]</p>
+                    <p align="middle"><img src="TempRetinex.jpg" width="100%" /></p>
+                    <p>TempRetinex is an unsupervised Retinex-based video enhancement framework that exploits inter-frame correlations. It introduces Brightness Consistency Preprocessing (BCP) to align intensity across exposures, improving robustness to varied lighting. A multiscale temporal consistency loss with occlusion-aware masking enforces frame coherence, while Reverse Inference (RI) and Self-Ensemble (SE) further enhance temporal stability and denoising.</p></li>
                 
                 
                
             </div>
             <div class="col">
                 
-                    <li><a>Contextual Colorization and Denoising for Low-Light Ultra High Resolution Sequences</a> (ICIP2021) <p>[<a href="https://pui-nantheera.github.io/research/CIC/colorization_denoising.html">Project page</a>] <pdf>[</pdf><a href="https://arxiv.org/pdf/2101.01597">PDF</a><pdf>]</pdf> [<a href="https://github.com/pui-nantheera/Lowlight_cyclegan">Code</a>]</p>
+                    <li><a>Zero-TIG: Temporal Consistency-Aware Zero-Shot Illumination-Guided Low-light Video Enhancement</a> (EUSIPCO2025) <p><pdf>[</pdf><a href="https://arxiv.org/abs/2503.11175">PDF</a><pdf>]</pdf> [<a href="https://github.com/liyinibristol/Zero-TIG">Code</a>]</p>
+                    <p align="middle"><img src="ZeroTIG.jpg" width="100%" /></p>
+                    <p>This work introduces Zero-TIG, a zero-shot learning approach for low-light video enhancement that combines Retinex theory with optical flow. The network includes an enhancement module, handling denoising, illumination estimation, and reflection removal, and a temporal feedback module that enforces consistency via histogram equalization, optical flow, and image warping. These components enable temporally coherent and visually consistent enhancement without paired training data.</p></li>
+            </div>
+            
+                
+            </div>
+
+            <div class="row">
+            <div class="col">
+                <li><a>Contextual Colorization and Denoising for Low-Light Ultra High Resolution Sequences</a> (ICIP2021) <p>[<a href="https://pui-nantheera.github.io/research/CIC/colorization_denoising.html">Project page</a>] <pdf>[</pdf><a href="https://arxiv.org/pdf/2101.01597">PDF</a><pdf>]</pdf> [<a href="https://github.com/pui-nantheera/Lowlight_cyclegan">Code</a>]</p>
                         <p align="middle"><img src=" diagram.png" width="80%" /></p>
                     <p>TThis work proposes an unpaired learning method for simultaneous colorization and denoising of ultra-high-resolution videos. To address memory constraints at large scales, we introduce a multiscale patch-based framework that captures both local and contextual features, complemented by an adaptive temporal smoothing technique to suppress flickering artifacts.</p></li>
+                
+                
+               
+            </div>
+            <div class="col">
+                
+                    
             </div>
             
                 
@@ -116,8 +133,8 @@
                 <h2 id="downloads">Downloads</h2>
                 <h5 id="UGteam">Publications</h5> 
                 <ul>
-                    
-                    <li><span style="color:#C71585;">[Best Student Paper Award Shortlist]</span> <a>Zero-TIG: Temporal Consistency-Aware Zero-Shot Illumination-Guided Low-light Video Enhancement</a>. Y Li and N Anantrasirichai. 33rd European Signal Processing Conference, 2025 <pdf>[</pdf><a href="https://arxiv.org/pdf/2503.11175">PDF</a><pdf>]</pdf> </li>
+                    <li><a>TempRetinex: Retinex-based Unsupervised Enhancement for Low-light Video Under Diverse Lighting Conditions</a>. Y Li, L Forster, D. Bull, and N. Anantrasirichai.  In Proceedings of the IEEE International Conference on Multimedia and Expo. 2026 [<a href="https://arxiv.org/abs/2511.09609">PDF</a>] [<a href="https://github.com/liyinibristol/TempRetinex">Code</a>] </li>
+                    <li><span style="color:#C71585;">[Best Student Paper Award Shortlist]</span> <a>Zero-TIG: Temporal Consistency-Aware Zero-Shot Illumination-Guided Low-light Video Enhancement</a>. Y Li and N Anantrasirichai. 33rd European Signal Processing Conference, 2025 <pdf>[</pdf><a href="https://arxiv.org/pdf/2503.11175">PDF</a><pdf>]</pdf> [<a href="https://github.com/liyinibristol/Zero-TIG">Code</a>]</li>
                     <li><a>Contextual colorization and denoising for low-light ultra high resolution sequences</a>. N. Anantrasirichai and D. Bull.  In Proceedings of the IEEE International Conference on Image Processing. 2021 [<a href="https://arxiv.org/pdf/2101.01597.pdf">PDF</a>] [<a href="https://pui-nantheera.github.io/research/CIC/colorization_denoising.html">Project page</a>] </li>
                 </ul> 
                 <h5 id="UGteam">White papers</h5>
