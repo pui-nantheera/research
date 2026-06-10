@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>InSAR Phase Unwrapping</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+        <!-- you should probably put some google analytics / meta bits and pieces
+	    here : PRH
+    <meta property="og:title" content="Paul Hill's Website"> etc.
+      <script async src="https://www.googletagmanager.com/gtag/js?id=??????????"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '??????????');
+  </script>
+    -->
+
+<body id="page-top">
+    <div class="page-container">
+        <div class="inner">
+            <div class="container">
+                <div class="row">
+                    <div class="row vertical-align">
+
+                        <div class="col-md-10">
+                            <div class="title">
+                                <h1>InSAR Phase Unwrapping</h1>
+                                <h4>Combining InSAR Physics with AI for Faster, More Reliable Phase Unwrapping</h4>
+                            </div>
+                        </div>
+			<div class="col-md-2">
+			    <p><a href='https://www.bristol.ac.uk'><img src="../uob-logo.svg" width="100%" height="20%" alt=""></a></p>
+			    <p><a href='https://www.bristol.ac.uk/vision-institute'><img src="../bvilogo.svg" width="100%" height="20%" alt=""></a></p>
+			     <p><a href='https://vilab.blogs.bristol.ac.uk'><img src="../VIL_logo.svg" width="100%" height="20%" alt=""></a></p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-md">
+                <!-- Add a representative figure here, e.g.: <p><img src="InSARPhaseUnwrapping.jpg" width="100%" /></p> -->
+
+                <h2 id="aim">Aim</h2>
+                <p>Phase unwrapping is a fundamental problem in Interferometric Synthetic Aperture Radar (InSAR) data processing, underpinning geophysical applications such as deformation monitoring and hazard assessment. Its reliability is often limited by noise and decorrelation in radar acquisitions, making accurate reconstruction of deformation signals challenging. This project aims to combine the physical principles and unique characteristics of InSAR data with recent advances in AI to deliver faster and more reliable phase unwrapping than traditional techniques.</p>
+
+
+
+        <div class="row">
+        <div class="col">
+        <dt>Collaborators</dt>
+            <dd><a href='https://comet.nerc.ac.uk/' target="_blank">COMET (Centre for the Observation and Modelling of Earthquakes, Volcanoes and Tectonics)</a></dd>
+        </div>
+        </div>
+        <hr />
+            
+        <h2 id="downloads">Methods</h2>
+        <div class="container-md">
+            <div class="row">
+            <div class="col">
+                <li><a>UnwrapDiff: A Conditional Diffusion Model for InSAR Phase Unwrapping</a> (ICASSP 2026)<p>[<a href="https://arxiv.org/pdf/2512.04749">PDF</a>]</p> 
+                    <!-- <p align="middle"><img src="UnwrapDiff.jpg" width="100%" /></p> -->
+                    <p>UnwrapDiff is a denoising diffusion probabilistic model (DDPM)-based framework for InSAR phase unwrapping, in which the output of the traditional minimum cost flow algorithm (SNAPHU) is incorporated as conditional guidance. A synthetic dataset incorporating atmospheric effects and diverse noise patterns, representative of realistic InSAR observations, is constructed to evaluate robustness. The model leverages the conditional prior while reducing the effect of diverse noise patterns, achieving on average a 10.11% reduction in NRMSE compared to SNAPHU and better reconstruction in difficult cases such as dyke intrusions.</p></li>
+
+
+
+            </div>
+            <div class="col">
+
+                    <li><a>An InSAR Phase Unwrapping Framework for Large-scale and Complex Events</a> (IGARSS 2026) <p>[<a href="https://arxiv.org/pdf/2603.21378">PDF</a>]</p>
+                    <!-- <p align="middle"><img src="InSARLargeScale.jpg" width="100%" /></p> -->
+                    <p>This work presents a diffusion-model-based phase unwrapping framework developed to process large-scale interferograms and to address phase discontinuities caused by deformation. In earthquake-related deformation, shallow sources can generate surface-breaking faults and abrupt displacement discontinuities that disrupt phase continuity and often cause conventional algorithms to fail. By leveraging a diffusion model architecture, the method recovers physically consistent unwrapped phase fields even in the presence of fault-related phase jumps, while scaling well to the large, spatially heterogeneous interferograms encountered in real-world data.</p></li>
+            </div>
+
+
+            </div>
+            <hr />
+
+        <div class="row">
+        <div class="col">
+        <h2 id="downloads">Research team</h2>
+            <h5 id="coreteam">Core</h5>
+            <ul>
+                <li><a href='https://pui-nantheera.github.io/'>N. Anantrasirichai</a>: Lead academic</li>
+                <li><a href='https://www.bristol.ac.uk/people/person/Alin-Achim-a515a426-727d-480b-8d4e-a4a756d6d8f9/' target="_blank">A. Achim</a>: Lead academic</li>
+                <li><a href='https://research-information.bris.ac.uk/en/persons/juliet-j-biggs/' target="_blank">J. Biggs</a>: Lead academic</li>
+                <li><a href='https://scholar.google.com/citations?user=RQYVCOEAAAAJ&hl=en' target="_blank">Yijia Song</a>: PhD student, [<a href="https://arxiv.org/abs/2512.04749">Paper1</a>] [<a href="https://arxiv.org/abs/2603.21378">Paper2</a>]</li>
+                <li><a href=''>Robert Popescu</a>: PhD student</li>
+                <li><a href=''>Simon Orrego</a>: PhD student</li>
+            </ul>
+
+        </div>
+        </div>
+            </div>
+            <hr />
+            <div class="container-md">
+                <h2 id="downloads">Downloads</h2>
+                <h5 id="UGteam">Publications</h5>
+                <ul>
+                    <li><a>UnwrapDiff: A Conditional Diffusion Model for InSAR Phase Unwrapping</a>. Y Song, J Biggs, A Achim, R Popescu, S Orrego, and N Anantrasirichai. 2025 [<a href="https://arxiv.org/abs/2512.04749">PDF</a>]</li>
+                    <li><a>An InSAR Phase Unwrapping Framework for Large-scale and Complex Events</a>. Y Song, J Biggs, A Achim, R Popescu, S Orrego, and N Anantrasirichai. 2026 [<a href="https://arxiv.org/abs/2603.21378">PDF</a>]</li>
+                </ul>
+            </div>
+            <hr />
+
+
+            <div class="container-md">
+                <h2 id="related">Related research</h2>
+                <h5 id="downloads">SAR and remote sensing at VI-Lab</h5>
+                <ul>
+                    <li><a href="https://ieeexplore.ieee.org/document/9323696">Despeckling SAR Images of the Sea Surface</a></li>
+                    <li><a href="https://ieeexplore.ieee.org/abstract/document/9160976">Solving SAR Imaging Inverse Problems Using Nonconvex Regularization</a></li>
+                    <li><a href="https://arxiv.org/pdf/2007.12391.pdf">Artificial intelligence in the creative industries: A review</a>. N Anantrasirichai and D R Bull, Artif Intell Rev 55, 2022</li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
