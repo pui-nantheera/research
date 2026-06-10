@@ -41,7 +41,7 @@
   
                         <div class="col-md-10">
                             <div class="title">
-                                <h1>Production Workflows for Low-light Environments </h1>
+                                <h1>Low-Light Enhancement, Denoising, Deblurring and Segmentation </h1>
                                 <h4>AI-based Image Processing and Computer Vision </h4>
                             </div>
                         </div>
@@ -104,11 +104,12 @@
             <h2 id="methods">Methods</h2>
             <p>
                 <a class="btn btn-primary" href="#methods-enhancement" role="button" style="background-color:#06837e;border-color:#06837e;">Enhancement</a>
-                <a class="btn btn-primary" href="#methods-segmentation" role="button" style="background-color:#06837e;border-color:#06837e;">Segmentation</a>
+                <a class="btn btn-primary" href="#methods-deblur" role="button" style="background-color:#06837e;border-color:#06837e;">Denoising and Deblurring</a>
+                <a class="btn btn-primary" href="#methods-segmentation" role="button" style="background-color:#06837e;border-color:#06837e;">Segmentation and Detection</a>
                 <a class="btn btn-primary" href="#methods-degradation" role="button" style="background-color:#06837e;border-color:#06837e;">Data Simulators</a>
             </p>
             <hr />
-            <h3 id="methods-enhancement">Methods for Enhancement</h3>
+            <h3 id="methods-enhancement" style="margin-bottom: 1rem;">Methods for Enhancement</h3>
             <div class="row">
             <div class="col">
                 <li><a>Dynamic Weight-based Temporal Aggregation for Low-light Video Enhancement Under Extreme Noise (DWTA-Net)</a> (ICIP2026) [<a href="https://arxiv.org/pdf/2510.09450">PDF</a>]
@@ -126,19 +127,7 @@
             <div class="col">
                 <li><a>TempRetinex: Retinex-based Unsupervised Enhancement for Low-light Video Under Diverse Lighting Conditions</a> (ICME2026) [<a href="https://arxiv.org/abs/2511.09609">PDF</a>] [<a href="https://github.com/liyinibristol/TempRetinex">Code</a>]
                     <p align="middle" style="margin-top: 0.5rem;"><img src="TempRetinex.jpg" width="100%" /></p>
-                    <p>TempRetinex is an unsupervised Retinex-based video enhancement framework that exploits inter-frame correlations. It introduces Brightness Consistency Preprocessing (BCP) to align intensity across exposures, improving robustness to varied lighting. A multiscale temporal consistency loss with occlusion-aware masking enforces frame coherence, while Reverse Inference (RI) and Self-Ensemble (SE) further enhance temporal stability and denoising.</p></li>
-            </div>
-            <div class="col">
-                <li><a>PocketDVDNet: Realtime Video Denoising for Real Camera Noise</a> (ICASSP2026) [<a href="https://arxiv.org/pdf/2601.16780" target="_blank">PDF</a>]
-                    <p align="middle"><img src="PocketDVDNet.jpg" width="90%" /></p> 
-                    <p>PocketDVDNet is a lightweight, real-time video denoiser built with a model-compression framework that combines sparsity-guided structured pruning, a physics-informed noise model, and knowledge distillation. Starting from a reference model, sparsity is induced and channels are pruned, then a teacher is retrained on realistic multi-component sensor noise so the student learns implicit noise handling without explicit noise-map inputs. It reduces model size by 74% while improving denoising quality and processing 5-frame patches in real time.</p></li>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col">
-                <li><a>BVI-Mamba: Video Enhancement Using a Visual State-Space Model for Low-Light and Underwater Environments</a> (MLCD2025) [<a href="https://arxiv.org/abs/2604.23655">PDF</a>] [<a href="https://github.com/russellllaputa/BVI-Mamba">Code</a>]</p>
-                    <p align="middle"><img src="BVI-Mamba.jpg" width="100%" />
-                    <p>BVI-Mamba (Visual Mamba) is an enhancement framework that leverages the Visual State Space (VSS) model to reduce memory usage and computational time. It comprises a feature alignment module, which registers spatio-temporal displacement between input frames in the feature space, and a UNet-like enhancement module for noise removal and brightness adjustment in which all convolutional layers are replaced by VSS blocks. It outperforms Transformer- and convolution-based models on both low-light and underwater video enhancement.</p></li>
+                    <p>TempRetinex is an unsupervised Retinex-based video enhancement framework that exploits inter-frame correlations. It introduces Brightness Consistency Preprocessing to align intensity across exposures, improving robustness to varied lighting. A multiscale temporal consistency loss with occlusion-aware masking enforces frame coherence, while Reverse Inference and Self-Ensemble further enhance temporal stability and denoising.</p></li>
             </div>
             <div class="col">
                 <li><a>Low-light Video Enhancement with Conditional Diffusion Models and Wavelet Interscale Attentions</a> (CVMP2024) <p>[<a href="https://dl.acm.org/doi/pdf/10.1145/3697294.3697304">PDF</a>] [<a href="https://github.com/lrr-rachel/BVI-CDM">Code</a>]</p>
@@ -146,13 +135,39 @@
                     <p>This work introduces a conditional diffusion model for low-light video enhancement equipped with wavelet interscale attentions. By operating in the wavelet domain and conditioning the diffusion process on the degraded input, the method jointly restores illumination and fine detail while suppressing noise and preserving temporal coherence. The approach is released as BVI-CDM.</p></li>
             </div>
             </div>
-            <hr />
-            <h3 id="methods-segmentation">Methods for Segmentation</h3>
             <div class="row">
             <div class="col">
-                <li><a>ELVIS: Enhance Low-Light for Video Instance Segmentation in the Dark</a> (CVPR2026) <p>[<a href="https://openaccess.thecvf.com/content/CVPR2026/html/Lin_ELVIS_Enhance_Low-Light_for_Video_Instance_Segmentation_in_the_Dark_CVPR_2026_paper.html">PDF</a>] [<a href="https://arxiv.org/abs/2512.01495">arXiv</a>] [<a href="https://joannelin168.github.io/research/ELVIS/">Project</a>] [<a href="https://github.com/JoanneLin168/ELVIS">Code</a>]</p>
-                    <p align="middle"><img src="ELVIS.jpg" width="100%" /></p> 
-                    <p>ELVIS enables domain adaptation of state-of-the-art video instance segmentation (VIS) models to low-light scenarios. It comprises an unsupervised synthetic low-light video pipeline that models both spatial and temporal degradations, a calibration-free degradation profile estimation network (VDP-Net), and an enhancement decoder head that disentangles degradations from content features. ELVIS improves performance by up to +3.7 AP on the synthetic low-light YouTube-VIS 2019 dataset and beats two-stage baselines by at least +2.8 AP on real low-light videos.</p></li>
+                <li><a>BVI-Mamba: Video Enhancement Using a Visual State-Space Model for Low-Light and Underwater Environments</a> (MLCD2025) [<a href="https://arxiv.org/abs/2604.23655">PDF</a>] [<a href="https://github.com/russellllaputa/BVI-Mamba">Code</a>]</p>
+                    <p align="middle"><img src="BVI-Mamba.jpg" width="100%" />
+                    <p>BVI-Mamba is an enhancement framework that leverages the Visual State Space (VSS) model to reduce memory usage and computational time. It comprises a feature alignment module, which registers spatio-temporal displacement between input frames in the feature space, and a UNet-like enhancement module for noise removal and brightness adjustment in which all convolutional layers are replaced by VSS blocks. It outperforms Transformer- and convolution-based models on both low-light and underwater video enhancement.</p></li>
+            </div>
+            <div class="col">
+                <li><a>A Spatio-temporal Aligned SUNet Model for Low-light Video Enhancement</a> (ICIP2024) <p>[<a href="https://arxiv.org/pdf/2403.02408">PDF</a>] [<a href="https://github.com/lrr-rachel/STA-SUNet">CODE</a>] [<a target="_blank" href="https://ieee-dataport.org/open-access/bvi-lowlight-fully-registered-datasets-low-light-image-and-video-enhancement">Dataset</a>]</p>
+                    <p align="middle"><img src="STA-SUNet.jpg" width="100%" /></p> 
+                    <p>This work introduces a conditional diffusion model for low-light video enhancement equipped with wavelet interscale attentions. By operating in the wavelet domain and conditioning the diffusion process on the degraded input, the method jointly restores illumination and fine detail while suppressing noise and preserving temporal coherence. The approach is released as BVI-CDM.</p></li>
+            </div>
+            </div>
+            <hr />
+            <h3 id="methods-deblur" style="margin-bottom: 1rem;">Methods for Denoising and Deblurring</h3>
+            <div class="row">
+            <div class="col">
+                <li><a>PocketDVDNet: Realtime Video Denoising for Real Camera Noise</a> (ICASSP2026) [<a href="https://arxiv.org/pdf/2601.16780" target="_blank">PDF</a>]
+                    <p align="middle"><img src="PocketDVDNet.jpg" width="90%" /></p> 
+                    <p>PocketDVDNet is a lightweight, real-time video denoiser built with a model-compression framework that combines sparsity-guided structured pruning, a physics-informed noise model, and knowledge distillation. Starting from a reference model, sparsity is induced and channels are pruned, then a teacher is retrained on realistic multi-component sensor noise so the student learns implicit noise handling without explicit noise-map inputs. It reduces model size by 74% while improving denoising quality and processing 5-frame patches in real time.</p></li>
+            </div>
+            <div class="col">
+                <li><a>DaBiT: Depth and Blur informed Transformer for Video Focal Deblurring</a> (WACVW2025) [<a href="https://arxiv.org/pdf/2407.01230">PDF</a>]
+                    <p align="middle" style="margin-top: 0.5rem;"><img src="DaBiT.jpg" width="92%" /></p> 
+                    <p>DaBiT presents a novel map-guided transformer that, together with image propagation, effectively leverages the continuous spatial variation of focal blur to restore degraded footage. We also introduce a flow re-focusing module designed to efficiently align relevant features between blurry and sharp domains. In addition, we propose a novel synthetic focal blur data generation technique, which broadens the model’s learning capabilities and improves its robustness across a wider range of content.</p></li>
+            </div>
+            </div>
+            <hr />
+            <h3 id="methods-segmentation" style="margin-bottom: 1rem;">Methods for Segmentation and Detection</h3>
+            <div class="row">
+            <div class="col">
+                <li><a>ELVIS: Enhance Low-Light for Video Instance Segmentation in the Dark</a> (CVPR2026) [<a href="https://openaccess.thecvf.com/content/CVPR2026/html/Lin_ELVIS_Enhance_Low-Light_for_Video_Instance_Segmentation_in_the_Dark_CVPR_2026_paper.html">PDF</a>] [<a href="https://arxiv.org/abs/2512.01495">arXiv</a>] [<a href="https://joannelin168.github.io/research/ELVIS/">Project</a>] [<a href="https://github.com/JoanneLin168/ELVIS">Code</a>]
+                    <p align="middle" style="margin-top: 0.7rem;"><img src="ELVIS.jpg" width="100%" /></p> 
+                    <p>ELVIS enables domain adaptation of state-of-the-art video instance segmentation (VIS) models to low-light scenarios. It comprises an unsupervised synthetic low-light video pipeline that models both spatial and temporal degradations, a calibration-free degradation profile estimation network (VDP-Net), and an enhancement decoder head that disentangles degradations from content features. ELVIS improves performance by up to +3.7 AP on the synthetic dataset and beats two-stage baselines by at least +2.8 AP on real low-light videos.</p></li>
             </div>
             <div class="col">
                 <li><a>Feature Denoising for Low-Light Instance Segmentation Using Weighted Non-Local Blocks</a> (ICASSP2025) <p>[<a href="https://arxiv.org/pdf/2402.18307">PDF</a>] [<a href="https://github.com/JoanneLin168/weighted-non-local">Code</a>]</p>
@@ -160,8 +175,18 @@
                     <p>This method performs instance segmentation directly on low-light imagery by embedding weighted non-local blocks (wNLB) in the feature extractor, enabling an inherent denoising process at the feature level. Because denoising happens in feature space, the approach removes the need for aligned ground-truth images and can be trained on real-world low-light data. Additional learnable per-layer weights adapt the network to real noise characteristics across feature scales, improving AP by at least +7.6 over pretrained detectors.</p></li>
             </div>
             </div>
+            <div class="row">
+            <div class="col">
+                <li><a>A comprehensive study of object tracking in low-light environments</a> (Sensor 2024) [<a href="https://arxiv.org/abs/2504.12169">PDF</a>] 
+                    <p align="middle" style="margin-top: 0.5rem;"><video width="95%" autoplay loop muted playsinline controls><source src="penguin_dark.mp4" type="video/mp4">Your browser does not support the video tag.</video></p>
+                    <p>This paper presents a comprehensive study examining the impact of these distortions on automatic object trackers. Additionally, we propose a solution to enhance the tracking performance by integrating denoising and low-light enhancement methods into the transformer-based object tracking system.</p></li>
+            </div>
+            <div class="col">
+            </div>
+            </div>
+            
             <hr />
-            <h3 id="methods-degradation">Methods for Data Simulators</h3>
+            <h3 id="methods-degradation" style="margin-bottom: 1rem;">Methods for Data Simulators</h3>
             <div class="row">
             <div class="col">
                 <li><a>Towards a General-Purpose Zero-Shot Synthetic Low-Light Image and Video Pipeline</a> (ACM MM Workshop 2025) <p>[<a href="https://arxiv.org/abs/2504.12169">PDF</a>] [<a href="https://github.com/JoanneLin168/degradation-estimation-network">Code</a>]</p>
