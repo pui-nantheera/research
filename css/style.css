@@ -94,6 +94,11 @@ h2 {
     background-color: #FFF;
 }
 
+h3 {
+    font-weight: lighter;
+    color: #555555;
+}
+
 @media (max-width: 600px){
     .fasmaller {
         ai:fa-4x
