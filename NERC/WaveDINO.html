@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WaveDINO: Learning-Based Atmospheric Correction of Unwrapped InSAR Interferograms</title>
+  <meta name="description" content="WaveDINO is a wavelet-based multi-scale denoising framework conditioned on frozen DINOv3 features and terrain information for atmospheric correction of unwrapped InSAR interferograms, validated by GNSS at Laguna del Maule and Campi Flegrei volcanoes.">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body, .title, .subtitle, .button, .stat-card .stat-number, .stat-card .stat-label, h1, h2, h3, h4, h5, h6, p, span, a, td, th, li, pre {
+      font-family: 'Google Sans', 'Noto Sans', sans-serif;
+    }
+    .publication-title { font-weight: 700; margin-top: 4rem; }
+    .hero.is-light { background-color: #ffffff; }
+    .author-block { font-weight: 300; margin-right: 0.5rem; }
+    .publication-authors a,
+    .publication-authors a:link,
+    .publication-authors a:visited { color: #2a7ac9 !important; }
+    .publication-authors a:hover { color: #0d4f8b !important; text-decoration: underline; }
+    .publication-links { margin-top: 2rem; }
+    .publication-links .link-block { margin: 0.25rem; display: inline-block; }
+    .publication-links .button { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .stat-card { text-align: center; padding: 1.25rem 0.5rem; border-radius: 8px; background-color: #fafafa; }
+    .stat-card .stat-number { font-family: 'Google Sans', sans-serif; font-size: 2rem; font-weight: 700; color: #363636; }
+    .stat-card .stat-label { color: #6b6b6b; margin-top: 0.25rem; font-size: 0.95rem; }
+    .ours-row { background-color: #fff7e6 !important; font-weight: 600; }
+    .figure-placeholder { border: 1px dashed #c8c8c8; border-radius: 6px; padding: 3rem 1rem; text-align: center; color: #9a9a9a; background-color: #fafafa; }
+    pre.bibtex { background-color: #f5f5f5; padding: 1.25rem; border-radius: 6px; overflow-x: auto; font-size: 0.9rem; }
+    .benchmark-table tbody.group-divider tr:first-child td { border-top: 2px solid #b5b5b5; }
+    .benchmark-table th, .benchmark-table td { vertical-align: middle; }
+    .benchmark-table u { text-decoration: underline; text-underline-offset: 2px; }
+    .benchmark-table, .benchmark-table tbody, .benchmark-table thead, .benchmark-table tr, .benchmark-table th, .benchmark-table td { background-color: transparent !important; }
+    .table-wrap { background-color: #fafafa; padding: 1.25rem; border-radius: 6px; }
+    .section { padding: 2.5rem 1.5rem; }
+    .footer { padding: 2.5rem 1.5rem; }
+    .contrib-card { background-color: #fafafa; border-radius: 8px; padding: 1.25rem; height: 100%; }
+    .contrib-card .contrib-title { font-weight: 700; color: #2a7ac9; margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h1 class="title is-2 publication-title">WaveDINO: Learning-Based Atmospheric Correction of Unwrapped InSAR Interferograms</h1>
+
+      <div class="is-size-4 publication-authors" style="margin-top: 2rem;">
+        <span class="author-block"><a href="#" target="_blank">Robert Popescu</a><sup>1</sup>,</span>
+        <span class="author-block"><a href="https://research-information.bris.ac.uk/en/persons/juliet-biggs" target="_blank">Juliet Biggs</a><sup>2</sup>,</span>
+        <span class="author-block"><a href="#" target="_blank">Tianyuan Zhu</a><sup>2</sup>, and</span>
+        <span class="author-block"><a href="https://pui-nantheera.github.io/" target="_blank">Nantheera Anantrasirichai</a><sup>1</sup></span>
+      </div>
+
+      <div class="is-size-5 publication-authors" style="margin-top: 1rem;">
+        <span class="author-block" style="font-weight: 300;"><sup>1</sup>COMET, School of Computer Science, University of Bristol, UK, <p><sup>2</sup>COMET, School of Earth Science, University of Bristol, UK</span></p>
+      </div>
+
+      <div class="publication-links">
+        <!-- TODO: paste arXiv URL into href -->
+        <span class="link-block">
+          <a href="#" class="button is-dark is-rounded">
+            <span class="icon"><i class="ai ai-arxiv"></i></span>
+            <span>arXiv</span>
+          </a>
+        </span>
+        <!-- TODO: paste GitHub code URL (https://github.com/robertpop99/WaveDINO) into href once released -->
+        <span class="link-block">
+          <a href="#" class="button is-dark is-rounded">
+            <span class="icon"><i class="fab fa-github"></i></span>
+            <span>Code</span>
+          </a>
+        </span>
+        <!-- TODO: paste dataset / synthetic generator URL into href, e.g. https://github.com/pui-nantheera/Synthetic-InSAR-image -->
+        <span class="link-block">
+          <a href="#" class="button is-dark is-rounded">
+            <span class="icon"><i class="fas fa-database"></i></span>
+            <span>Data</span>
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Abstract</h2>
+    <div class="content has-text-justified">
+      <p>
+        Interferometric Synthetic Aperture Radar (InSAR) enables effective monitoring of volcanic deformation; however, the observed signals are often corrupted by atmospheric phase delays, seasonal surface changes, and decorrelation effects. Existing atmospheric correction methods, such as numerical weather model&ndash;based methods, can reduce these effects but do not consistently remove atmospheric artefacts and may introduce residual biases.
+      </p>
+      <p>
+        To address these limitations, we propose a novel learning-based method for denoising unwrapped InSAR interferograms, using a hybrid training strategy that combines physically motivated synthetic deformation with real atmospheric noise. Specifically, we introduce <strong>WaveDINO</strong>, a wavelet-based multi-scale denoising framework conditioned on frozen DINOv3 foundation-model features and terrain information. Training uses synthetic magma-source deformation superimposed on short-term interferograms to expose the network to realistic atmospheric statistics while retaining known ground truth.
+      </p>
+      <p>
+        Performance is evaluated on both controlled synthetic data and long-term real interferograms from <strong>Laguna del Maule (Chile)</strong> and <strong>Campi Flegrei (Italy)</strong>, with independent GNSS measurements used for validation. WaveDINO consistently outperforms competing models, improving agreement with GNSS measurements and reducing mean GNSS misfit by approximately <strong>3%</strong> and <strong>19%</strong> at the two sites respectively, while surpassing weather-model-based corrections.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background-color: #fafafa;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">At a Glance</h2>
+    <div class="columns is-multiline" style="margin-top: 1rem;">
+      <div class="column is-3">
+        <div class="stat-card">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Volcanic test sites (Chile &amp; Italy)</div>
+        </div>
+      </div>
+      <div class="column is-3">
+        <div class="stat-card">
+          <div class="stat-number">~38k</div>
+          <div class="stat-label">Synthetic deformation maps for training</div>
+        </div>
+      </div>
+      <div class="column is-3">
+        <div class="stat-card">
+          <div class="stat-number">~6.8k</div>
+          <div class="stat-label">Real long-term test interferograms</div>
+        </div>
+      </div>
+      <div class="column is-3">
+        <div class="stat-card">
+          <div class="stat-number">24</div>
+          <div class="stat-label">GNSS stations used for validation</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content has-text-justified" style="margin-top: 1.5rem;">
+      <p>
+        Sentinel-1 IW interferograms are processed automatically by the <a href="https://comet.nerc.ac.uk/COMET-LiCS-portal/" target="_blank">LiCSAR</a> pipeline and referenced via LICSBAS for the COMET Volcano Portal. For each volcano we analyse a 50&times;50&nbsp;km region of interest at 50&nbsp;m pixel spacing (500&times;500 pixels), spanning <strong>622 epochs</strong> at Laguna del Maule (Oct&nbsp;2014 &ndash; Aug&nbsp;2024) and <strong>1008 epochs</strong> at Campi Flegrei (Oct&nbsp;2014 &ndash; Sep&nbsp;2025). Independent ground truth is provided by <strong>5 GNSS stations</strong> at Laguna del Maule and <strong>19 GNSS stations</strong> at Campi Flegrei.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Method</h2>
+    <div class="content has-text-justified">
+      <p>
+        WaveDINO is a wavelet-based multi-scale denoiser that explicitly targets the spatially coherent, non-stationary statistics of tropospheric phase delay. The input unwrapped phase is decomposed into multi-resolution sub-bands so that broad atmospheric components can be modelled primarily in the low-frequency pathway, while fine deformation-related structure is preserved through high-frequency skip connections. Encoder channels follow 32 &rarr; 64 &rarr; 128, with the decoder mirrored.
+      </p>
+    </div>
+    
+    <img src="WaveDINOdiagram.jpg" style="width:98%;; display:block; margin:auto;">
+
+    <div class="columns is-multiline" style="margin-top: 2rem;">
+      <div class="column is-6">
+        <div class="contrib-card">
+          <div class="contrib-title">DINOv3 Cross-Attention (DCA)</div>
+          <div class="is-size-6">
+            Fuses frozen DINOv3 ConvNeXt-Base features with the model's low-frequency representation via cross-attention with a low-frequency attention bias, FiLM modulation and a learnable gated residual. Provides global semantic context that disambiguates large-scale atmosphere from real deformation.
+          </div>
+        </div>
+      </div>
+      <div class="column is-6">
+        <div class="contrib-card">
+          <div class="contrib-title">Terrain Modulation Block (TMB)</div>
+          <div class="is-size-6">
+            DEM-based feature-wise modulation (FiLM) using elevation and its horizontal/vertical gradients, with a learnable gate that adapts terrain influence in coastal and low-relief regions where turbulence dominates.
+          </div>
+        </div>
+      </div>
+      <div class="column is-6">
+        <div class="contrib-card">
+          <div class="contrib-title">Phase Ramp Head (PRH)</div>
+          <div class="is-size-6">
+            A lightweight head that predicts a bounded first-order planar trend (a&middot;x + b&middot;y + c) from globally pooled decoder features, capturing dominant scene-wide bias so the convolutional backbone can focus on residual structure.
+          </div>
+        </div>
+      </div>
+      <div class="column is-6">
+        <div class="contrib-card">
+          <div class="contrib-title">Hybrid Training Strategy</div>
+          <div class="is-size-6">
+            Synthetic magma-source deformation (1&ndash;4 Mogi sources, log&#8321;&#8320;&Delta;V &isin; [5, 7.9], depth 1.5&ndash;8&nbsp;km) is superimposed on short-baseline (&le;18&nbsp;day) real interferograms, exposing the network to realistic atmosphere while keeping a known target.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background-color: #fafafa;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Study Areas</h2>
+    <div class="columns" style="margin-top: 1rem;">
+      <div class="column is-6">
+        <div class="contrib-card" style="height: 100%;">
+          <div class="contrib-title">Laguna del Maule, Chile</div>
+          <p class="is-size-6">
+            Silicic volcanic system at 70.492&deg;W, 36.058&deg;S in the southern Andes. Rugged high-altitude topography with seasonal snow cover &mdash; conditions that promote strong stratified tropospheric delays and coherence loss. Persistent uplift exceeding several centimetres per year suggests significant shallow magma accumulation. Tracks 18A and 83D, 622 epochs (Oct 2014 &ndash; Aug 2024).
+          </p>
+        </div>
+      </div>
+      <div class="column is-6">
+        <div class="contrib-card" style="height: 100%;">
+          <div class="contrib-title">Campi Flegrei, Italy</div>
+          <p class="is-size-6">
+            Densely monitored caldera west of Naples (14.139&deg;E, 40.827&deg;N) in a low-relief, coastal and urbanised environment. Persistent hydrothermal and magmatic unrest (bradyseism) produces spatially heterogeneous atmospheric artefacts. Tracks 22D, 44A and 124D, 1008 epochs (Oct 2014 &ndash; Sep 2025).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <img src="WaveDINOstudyareas.jpg" style="width:60%;; display:block; margin:auto;">
+    <p class="has-text-centered is-size-6" style="margin-bottom: 1rem; color: #6b6b6b;"> (Left) Laguna del Maule, Chile. (Right) Campi Flegrei, Italy. </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Results on Synthetic Data</h2>
+    <div class="content has-text-justified">
+      <p>
+        We hold out synthetic deformation maps and superimpose them on real short-baseline interferograms to obtain a controlled test set with known ground truth. WaveDINO achieves the best perceptual (LPIPS), structural (SSIM) and pixel-wise (MSE, L<sub>3</sub>, ABS) scores at both volcanoes, indicating strong atmospheric attenuation without oversmoothing the deformation signal.
+      </p>
+    </div>
+
+    <div class="table-wrap">
+      <div class="table-container">
+        <p class="has-text-centered is-size-5" style="margin-top: 0; color: #6b6b6b;">
+          <strong>Table&nbsp;I.&nbsp;</strong>Image-quality metrics on synthetic data computed over the full image.
+        </p>
+        <p class="has-text-centered is-size-6" style="margin-bottom: 1rem; color: #6b6b6b;">
+          <strong>Bold</strong> and <u>underline</u> denote the best and second-best results in each column.
+        </p>
+        <table class="table is-fullwidth is-narrow is-hoverable benchmark-table">
+          <thead>
+            <tr>
+              <th rowspan="2">Method</th>
+              <th colspan="5" class="has-text-centered">Laguna del Maule</th>
+              <th colspan="5" class="has-text-centered">Campi Flegrei</th>
+            </tr>
+            <tr>
+              <th>MSE&nbsp;&darr;</th><th>LPIPS&nbsp;&darr;</th><th>SSIM&nbsp;&uarr;</th><th>L<sub>3</sub>&nbsp;&darr;</th><th>ABS&nbsp;&darr;</th>
+              <th>MSE&nbsp;&darr;</th><th>LPIPS&nbsp;&darr;</th><th>SSIM&nbsp;&uarr;</th><th>L<sub>3</sub>&nbsp;&darr;</th><th>ABS&nbsp;&darr;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>UNet</td><td>54.89</td><td>0.25</td><td>0.84</td><td>0.0109</td><td>4.99</td><td>35.30</td><td>0.29</td><td>0.73</td><td>0.0088</td><td>3.37</td></tr>
+            <tr><td>Diffusion (DDPM)</td><td>93.64</td><td>0.47</td><td>0.71</td><td>0.0140</td><td>6.58</td><td>66.52</td><td>0.51</td><td>0.62</td><td>0.0117</td><td>4.48</td></tr>
+            <tr><td>SwinIR</td><td>69.11</td><td>0.34</td><td>0.79</td><td>0.0125</td><td>5.74</td><td>40.53</td><td>0.35</td><td>0.72</td><td>0.0097</td><td>3.83</td></tr>
+            <tr><td>Restormer</td><td><u>33.77</u></td><td>0.27</td><td><u>0.85</u></td><td><u>0.0090</u></td><td><u>3.95</u></td><td><u>30.42</u></td><td>0.46</td><td>0.64</td><td><u>0.0081</u></td><td><u>3.34</u></td></tr>
+            <tr><td>WaveMamba</td><td>44.13</td><td><u>0.16</u></td><td><u>0.88</u></td><td>0.0099</td><td>4.55</td><td>46.29</td><td><u>0.25</u></td><td><u>0.76</u></td><td>0.0094</td><td>3.70</td></tr>
+            <tr class="ours-row"><td>WaveDINO (Ours)</td><td><strong>30.12</strong></td><td><strong>0.12</strong></td><td><strong>0.91</strong></td><td><strong>0.0080</strong></td><td><strong>3.81</strong></td><td><strong>26.44</strong></td><td><strong>0.09</strong></td><td><strong>0.92</strong></td><td><strong>0.0063</strong></td><td><strong>2.87</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="is-size-7" style="color: #6b6b6b; margin: 0.25rem 0 0 0;">
+        MSE in mm<sup>2</sup>; L<sub>3</sub> and ABS in mm. SSIM is unitless.
+      </p>
+    </div>
+
+    <div class="table-wrap" style="margin-top: 2rem;">
+      <div class="table-container">
+        <p class="has-text-centered is-size-5" style="margin-top: 0; color: #6b6b6b;">
+          <strong>Table&nbsp;II&nbsp;(top).&nbsp;</strong>MSE on synthetic data, binned by ground-truth deformation magnitude.
+        </p>
+        <p class="has-text-centered is-size-6" style="margin-bottom: 1rem; color: #6b6b6b;">
+          Lower is better. <strong>Bold</strong> = best, <u>underline</u> = second-best per column.
+        </p>
+        <table class="table is-fullwidth is-narrow is-hoverable benchmark-table">
+          <thead>
+            <tr>
+              <th rowspan="2">Method</th>
+              <th colspan="5" class="has-text-centered">Laguna del Maule</th>
+              <th colspan="5" class="has-text-centered">Campi Flegrei</th>
+            </tr>
+            <tr>
+              <th>&lt;10</th><th>10&ndash;20</th><th>20&ndash;30</th><th>&gt;30</th><th>Mean</th>
+              <th>&lt;10</th><th>10&ndash;20</th><th>20&ndash;30</th><th>&gt;30</th><th>Mean</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>UNet</td><td>27.76</td><td>64.39</td><td>86.76</td><td>120.02</td><td>74.73</td><td>29.92</td><td>58.57</td><td>73.39</td><td>112.79</td><td>68.67</td></tr>
+            <tr><td>Diffusion (DDPM)</td><td>39.94</td><td>89.13</td><td>138.63</td><td>247.14</td><td>128.71</td><td>63.22</td><td>103.25</td><td>132.91</td><td>204.29</td><td>125.92</td></tr>
+            <tr><td>SwinIR</td><td>28.31</td><td>71.76</td><td>108.32</td><td>169.38</td><td>94.44</td><td>36.02</td><td>61.29</td><td>79.05</td><td>105.56</td><td>70.48</td></tr>
+            <tr><td>Restormer</td><td><strong>17.81</strong></td><td><u>35.66</u></td><td><u>46.48</u></td><td><u>66.82</u></td><td><u>41.69</u></td><td>22.98</td><td>51.29</td><td>73.05</td><td>99.41</td><td>61.68</td></tr>
+            <tr><td>WaveMamba</td><td>22.27</td><td>49.03</td><td>64.47</td><td>86.39</td><td>55.54</td><td><u>20.88</u></td><td><u>41.51</u></td><td><u>56.30</u></td><td><u>79.91</u></td><td><u>49.65</u></td></tr>
+            <tr class="ours-row"><td>WaveDINO (Ours)</td><td><u>19.10</u></td><td><strong>35.55</strong></td><td><strong>41.80</strong></td><td><strong>54.12</strong></td><td><strong>37.64</strong></td><td><strong>15.62</strong></td><td><strong>26.77</strong></td><td><strong>37.61</strong></td><td><strong>55.29</strong></td><td><strong>33.82</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="is-size-7" style="color: #6b6b6b; margin: 0.25rem 0 0 0;">
+        All values in mm. Bins refer to ground-truth deformation magnitude in mm.
+      </p>
+    </div>
+
+    <!-- TODO: replace with Fig. 5 qualitative synthetic comparison -->
+    <img src="WaveDINOsynresults.jpg" style="width:100%;; display:block; margin:auto;">
+    
+  </div>
+</section>
+
+<section class="section" style="background-color: #fafafa;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Validation on Real Interferograms (GNSS)</h2>
+    <div class="content has-text-justified">
+      <p>
+        For real-data evaluation, we project GNSS time series into the satellite line-of-sight per track and compute MSE against the corrected InSAR phase, binned by deformation magnitude. Up to 5,000 long-term interferograms per volcano are used, including intervals with weak deformation, to avoid subjective selection bias.
+      </p>
+      <p>
+        Learning-based denoisers substantially improve agreement with independent GNSS over both raw unwrapped and GACOS-corrected interferograms. WaveDINO yields the lowest mean error at <em>both</em> sites, with especially large gains at Campi Flegrei (mean MSE 173&nbsp;mm vs 215&nbsp;mm for the best baseline).
+      </p>
+    </div>
+
+    <div class="table-wrap">
+      <div class="table-container">
+        <p class="has-text-centered is-size-5" style="margin-top: 0; color: #6b6b6b;">
+          <strong>Table&nbsp;II&nbsp;(bottom).&nbsp;</strong>MSE on real interferograms vs GNSS, binned by deformation magnitude.
+        </p>
+        <p class="has-text-centered is-size-6" style="margin-bottom: 1rem; color: #6b6b6b;">
+          Lower is better. <strong>Bold</strong> = best, <u>underline</u> = second-best per column. <strong>Unwrapped Interf.</strong> = raw input; <strong>GACOS</strong> = weather-model correction.
+        </p>
+        <table class="table is-fullwidth is-narrow is-hoverable benchmark-table">
+          <thead>
+            <tr>
+              <th rowspan="2">Method</th>
+              <th colspan="5" class="has-text-centered">Laguna del Maule</th>
+              <th colspan="5" class="has-text-centered">Campi Flegrei</th>
+            </tr>
+            <tr>
+              <th>&lt;10</th><th>10&ndash;20</th><th>20&ndash;30</th><th>&gt;30</th><th>Mean</th>
+              <th>&lt;10</th><th>10&ndash;20</th><th>20&ndash;30</th><th>&gt;30</th><th>Mean</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Unwrapped Interf.</td><td>270</td><td>384</td><td>404</td><td>1484</td><td>636</td><td>167</td><td><u>125</u></td><td><strong>143</strong></td><td>448</td><td>221</td></tr>
+            <tr><td>GACOS</td><td>393</td><td>523</td><td>839</td><td>3667</td><td>1355</td><td>191</td><td>143</td><td>165</td><td>464</td><td>241</td></tr>
+          </tbody>
+          <tbody class="group-divider">
+            <tr><td>UNet</td><td>47</td><td>188</td><td>359</td><td>3188</td><td>946</td><td>136</td><td>189</td><td>212</td><td>640</td><td>294</td></tr>
+            <tr><td>Diffusion (DDPM)</td><td>44</td><td><strong>182</strong></td><td>423</td><td>3169</td><td>955</td><td>110</td><td>206</td><td>338</td><td>1495</td><td>537</td></tr>
+            <tr><td>SwinIR</td><td><strong>37</strong></td><td>205</td><td>419</td><td>3360</td><td>1005</td><td>113</td><td>162</td><td>158</td><td><u>425</u></td><td><u>215</u></td></tr>
+            <tr><td>Restormer</td><td><u>38</u></td><td><u>189</u></td><td>397</td><td>3312</td><td>984</td><td><u>90</u></td><td>147</td><td>182</td><td>437</td><td>214</td></tr>
+            <tr><td>WaveMamba</td><td>43</td><td>193</td><td>365</td><td><u>2812</u></td><td><u>853</u></td><td>104</td><td>178</td><td>175</td><td>487</td><td>236</td></tr>
+            <tr class="ours-row"><td>WaveDINO (Ours)</td><td>48</td><td>194</td><td><strong>355</strong></td><td><strong>2720</strong></td><td><strong>829</strong></td><td><strong>42</strong></td><td><strong>98</strong></td><td><u>157</u></td><td><strong>417</strong></td><td><strong>173</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="is-size-7" style="color: #6b6b6b; margin: 0.25rem 0 0 0;">
+        All values in mm. Bins refer to GNSS-derived deformation magnitude in mm.
+      </p>
+    </div>
+
+    <!-- TODO: replace with Fig. 6 qualitative real-data comparison with GNSS overlays -->
+    <img src="WaveDINOrealresults.jpg" style="width:100%;; display:block; margin:auto;">
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Ablation Study</h2>
+    <div class="content has-text-justified">
+      <p>
+        Removing any single component degrades performance on Laguna del Maule synthetic data. DEM conditioning is the single most influential component (V2: MSE 37.57 vs 30.12 for the full model), followed by the phase-ramp head (V3), water-feature input (V1) and DINOv3 conditioning (V4) &mdash; indicating complementary benefits from terrain, water-aware inputs, ramp modelling and global semantic context.
+      </p>
+    </div>
+
+    <div class="table-wrap" style="max-width: 720px; margin: 0 auto;">
+      <div class="table-container">
+        <p class="has-text-centered is-size-5" style="margin-top: 0; color: #6b6b6b;">
+          <strong>Table&nbsp;III.&nbsp;</strong>Ablation study on Laguna del Maule synthetic data.
+        </p>
+        <table class="table is-fullwidth is-narrow is-hoverable benchmark-table">
+          <thead>
+            <tr>
+              <th>Variant</th>
+              <th class="has-text-centered">Water</th>
+              <th class="has-text-centered">DEM</th>
+              <th class="has-text-centered">Ramp</th>
+              <th class="has-text-centered">DINO</th>
+              <th class="has-text-centered">MSE&nbsp;&darr;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>V1</td><td class="has-text-centered">&#10007;</td><td class="has-text-centered">&#10003;</td><td class="has-text-centered">&#10003;</td><td class="has-text-centered">&#10003;</td><td class="has-text-centered">33.51</td></tr>
+            <tr><td>V2</td><td class="has-text-centered">&#10003;</td><td class="has-text-centered">&#10007;</td><td class="has-text-centered">&#10003;</td><td class="has-text-centered">&#10003;</td><td class="has-text-centered">37.57</td></tr>
+            <tr><td>V3</td><td class="has-text-centered">&#10003;</td><td class="has-text-centered">&#10003;</td><td class="has-text-centered">&#10007;</td><td class="has-text-centered">&#10003;</td><td class="has-text-centered">34.08</td></tr>
+            <tr><td>V4</td><td class="has-text-centered">&#10003;</td><td class="has-text-centered">&#10003;</td><td class="has-text-centered">&#10003;</td><td class="has-text-centered">&#10007;</td><td class="has-text-centered">32.39</td></tr>
+            <tr class="ours-row"><td>Full (Ours)</td><td class="has-text-centered">&#10003;</td><td class="has-text-centered">&#10003;</td><td class="has-text-centered">&#10003;</td><td class="has-text-centered">&#10003;</td><td class="has-text-centered"><strong>30.12</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background-color: #fafafa;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Acknowledgements</h2>
+    <div class="content has-text-justified is-size-6">
+      <p>
+        This work is supported by the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (MAST; Grant No.&nbsp;101003173) and the NERC Centre for the Observation and Modelling of Earthquakes, Volcanoes and Tectonics (<a href="https://comet.nerc.ac.uk" target="_blank">COMET</a>). The authors thank L. C&oacute;rdova and the Observatorio Volcanol&oacute;gico de los Andes del Sur (OVDAS), SERNAGEOMIN, for providing GNSS time series from Laguna del Maule. Campi Flegrei GNSS data are provided by Istituto Nazionale di Geofisica e Vulcanologia &mdash; Osservatorio Vesuviano (INGV-OV).
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <!-- TODO: replace with the final citation once published -->
+    <pre class="bibtex">@article{popescu2026wavedino,
+  title   = {WaveDINO: Learning-Based Atmospheric Correction of Unwrapped InSAR Interferograms Validated by GNSS: Results at Laguna del Maule and Campi Flegrei Volcanoes},
+  author  = {Popescu, Robert and Biggs, Juliet and Zhu, Tianyuan and Anantrasirichai, Nantheera},
+  journal = {arXiv preprint},
+  year    = {2026}
+}</pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container is-max-desktop has-text-centered">
+    <p class="is-size-7" style="margin-bottom: 0.75rem;">
+      <a href="https://hits.sh/pui-nantheera.github.io/research/NERC/WaveDINO.html/" target="_blank" rel="noopener">
+        <img alt="Visits" src="https://hits.sh/pui-nantheera.github.io/research/NERC/WaveDINO.html.svg?style=flat-square&label=Visits&color=2a7ac9">
+      </a>
+    </p>
+    <p class="is-size-7">
+      Website template adapted from the
+      <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a>,
+      itself based on the <a href="https://nerfies.github.io">Nerfies</a> project page.
+      Released under
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
