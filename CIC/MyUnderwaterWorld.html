@@ -91,16 +91,21 @@
                     <p align="left"><img src="SWAGSplating.jpg" width="100%" /></p>
                     <p>We present a semantic-guided 3D Gaussian Splatting framework for deep-sea scene reconstruction, where each Gaussian embeds CLIP-derived features to enforce semantic and structural consistency. A dedicated semantic loss and stage-wise training strategy further enhance stability and reconstruction fidelity.</p>
                 </li>
-                <li><a>Prune Wisely, Reconstruct Sharply: Compact 3D Gaussian Splatting via Adaptive Pruning and Difference-of-Gaussian Primitives</a> (CVPR2026) [<a href='https://wanghaoran16.github.io/prune-wisely-reconstruct-sharply-web//' target="_blank">Project</a>] [<a href="https://openaccess.thecvf.com/content/CVPR2026/html/Wang_Prune_Wisely_Reconstruct_Sharply_Compact_3D_Gaussian_Splatting_via_Adaptive_CVPR_2026_paper.html">PDF</a>] [<a href="https://arxiv.org/pdf/2602.24136">arXiv</a>] [<a href="https://github.com/WangHaoran16/Prune-Wisely-Reconstruct-Sharply/tree/main">Code</a>]
+                <li><a>Prune Wisely, Reconstruct Sharply: Compact 3D Gaussian Splatting via Adaptive Pruning and Difference-of-Gaussian Primitives</a> (CVPR2026) [<a href='https://wanghaoran16.github.io/prune-wisely-reconstruct-sharply-web/' target="_blank">Project</a>] [<a href="https://openaccess.thecvf.com/content/CVPR2026/html/Wang_Prune_Wisely_Reconstruct_Sharply_Compact_3D_Gaussian_Splatting_via_Adaptive_CVPR_2026_paper.html">PDF</a>] [<a href="https://arxiv.org/pdf/2602.24136">arXiv</a>] [<a href="https://github.com/WangHaoran16/Prune-Wisely-Reconstruct-Sharply/tree/main">Code</a>]
                     <p align="left"><img src="pruning.jpg" width="100%" /></p>
-                    <p>We propose an efficient reconstruction-aware pruning strategy that adaptively schedules pruning and refinement based on reconstruction quality, reducing model size while improving rendering performance. In addition, we introduce a 3D Difference-of-Gaussians primitive that jointly models positive and negative densities within a single primitive, enhancing Gaussian expressiveness under compact representations.</p>
+                    <p>We propose an adaptive reconstruction-aware pruning strategy that reduces model size while improving rendering performance, alongside a 3D Difference-of-Gaussians primitive that enhances Gaussian expressiveness in compact representations.</p>
+                </li>
+                <li><a>OceanXL: Large-scale Underwater 3D Gaussian Splatting via Block Partitioning and Adaptive Pruning</a> (SIGGRAPH Asia 2026) 
+                    <p>[<a href='https://wanghaoran16.github.io/OceanXL-Large-scale-Underwater-3D-Gaussian-Splatting/' target="_blank">Project</a>] [<a href="https://arxiv.org/abs/2609.29985">arXiv</a>] [<a href="https://github.com/WangHaoran16/OceanXL-Large-scale-Underwater-3D-Gaussian-Splatting">Code</a>] [<a href="https://zenodo.org/records/21824088">Dataset 1</a>] [<a href="https://zenodo.org/records/22960167">Dataset 2</a>]</p>
+                    <p align="left"><img src="OceanXL.jpg" width="100%" /></p>
+                    <p>We propose OceanXL, a fast and scalable 3DGS framework for large-scale underwater reconstruction. It partitions scenes into spatially coherent blocks for efficient optimisation and uses adaptive pruning to remove redundant primitives while preserving global consistency and visual quality.</p>
                 </li>
             </ul>
           
         </div>
         <div class="col">
             <ul>
-                <li><a>RUSplatting: Robust 3D Gaussian Splatting for Sparse-View Underwater Scene Reconstruction</a> (BMVC2025) <p>[<a href='https://theflash987.github.io/RUSplatting.page/' target="_blank">Project</a>] [<a href="https://arxiv.org/pdf/2505.15737">PDF</a>] <pdf>[</pdf><a href="https://github.com/theflash987/RUSplatting">Code</a><pdf>]</pdf> [<a href='https://zenodo.org/records/15482420' target="_blank">Dataset</a>]</p>
+                <li><a>RUSplatting: Robust 3D Gaussian Splatting for Sparse-View Underwater Scene Reconstruction</a> (BMVC2025) <p>[<a href='https://theflash987.github.io/RUSplatting.page/' target="_blank">Project</a>] [<a href="https://bmva-archive.org.uk/bmvc/2025/assets/papers/Paper_367/paper.pdf">PDF</a>] <pdf>[</pdf><a href="https://github.com/theflash987/RUSplatting">Code</a><pdf>]</pdf> [<a href='https://zenodo.org/records/15482420' target="_blank">Dataset</a>]</p>
                     <p align="left"><img src="RUSplatting.png" width="100%" /></p>
                     <p>Our enhanced Gaussian Splatting framework improves both visual quality and geometric accuracy in underwater rendering. We employ physics-guided decoupled RGB learning for accurate colour restoration, a frame interpolation strategy with adaptive weighting to address sparse views, and a new loss function that reduces noise while preserving edges, crucial for deep-sea content.</p>
                 </li>
@@ -110,7 +115,11 @@
                 </li>
                 <li><a>Bayesian Neural Networks for One-to-Many Mapping in Image Enhancement</a> (AAAI2026) <p> [<a href="https://arxiv.org/pdf/2501.14265">PDF</a>] [<a href="https://github.com/BinCVER/BEM">CODE</a>] 
                     <p align="middle"><img src="BEM.jpg" width="100%" /></p>
-                    <p>We propose a Bayesian Enhancement Model (BEM) that leverages Bayesian Neural Networks (BNNs) to model data uncertainty and generate diverse outputs. For efficient inference, we adopt a BNN–DNN framework, where a BNN captures the one-to-many mapping in a low-dimensional space, followed by a deterministic network that refines fine-grained details.</p>
+                    <p>We propose a Bayesian Enhancement Model (BEM) that uses Bayesian Neural Networks (BNNs) to model uncertainty and generate diverse outputs. For efficient inference, a BNN captures the one-to-many mapping in a low-dimensional space, followed by a deterministic network that refines fine-grained details.</p>
+                </li>
+                <li><a>Geometry beneath the Waves: Dense Priors for Sparse-View Underwater 3D Gaussian Splatting</a> (SIGGRAPH Asia Poster 2026) [<a href="https://arxiv.org/abs/2609.18737">arXiv</a>] 
+                    <p align="middle"><img src="geometry.jpg" width="65%" /></p>
+                    <p>WWe propose a sparse-view underwater reconstruction framework that adapts VGGT to underwater degradation and uses its dense geometry to guide view synthesis. VGGT is adapted with LoRA and teacher–student distillation, while the predicted geometry generates pseudo-views that improve view overlap and feature tracking.</p>
                 </li>
             </ul>
           
@@ -123,7 +132,7 @@
             <h5 id="coreteam">Core</h5>
             <ul>
                 <li><a href='https://pui-nantheera.github.io/'>N. Anantrasirichai</a>: Lead academic</li>
-                <li><a href='https://russellllaputa.github.io/'>Guoxi Huang (Edward)</a>: Postdoctoral researcher, <pdf>[</pdf><a href="https://arxiv.org/pdf/2501.14265">Paper1</a><pdf>]</pdf> <pdf>[</pdf><a href="https://www.arxiv.org/abs/2505.01869">Paper2</a><pdf>]</pdf> [<a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13460/1346009/BVI-Mamba--video-enhancement-using-a-visual-state-space/10.1117/12.3053998.short">Paper3</a>]</li> </li>
+                <li><a href='https://edhuang1.github.io/'>Guoxi Huang (Edward)</a>: Postdoctoral researcher, <pdf>[</pdf><a href="https://arxiv.org/pdf/2501.14265">Paper1</a><pdf>]</pdf> <pdf>[</pdf><a href="https://www.arxiv.org/abs/2505.01869">Paper2</a><pdf>]</pdf> [<a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13460/1346009/BVI-Mamba--video-enhancement-using-a-visual-state-space/10.1117/12.3053998.short">Paper3</a>]</li> </li>
                 <li><a href='https://research-information.bris.ac.uk/en/persons/alexandra-malyugina'>Alexandra Malyugina</a>: Postdoctoral researcher, [<a href="https://arxiv.org/abs/2504.19289">Paper</a>]</li>
                 <li><a href=''>Haoran Wang</a>: PhD student, [<a href="https://openaccess.thecvf.com/content/WACV2025/html/Wang_UW-GS_Distractor-Aware_3D_Gaussian_Splatting_for_Enhanced_Underwater_Scene_Reconstruction_WACV_2025_paper.html">Paper1</a>, <a href='https://wanghaoran16.github.io/UW-GS-website/' target="_blank">UW-GS Project Page</a>] [<a href="https://arxiv.org/pdf/2602.24136">Paper2</a>, <a href="https://wanghaoran16.github.io/prune-wisely-reconstruct-sharply-web/" target="_blank">Project Page</a>]</li>
                 <li><a href=''>Yini Li</a>: PhD student, <pdf>[</pdf><a href="https://openaccess.thecvf.com/content/WACV2025/hthttps://arxiv.org/abs/2503.11175">Paper</a><pdf>]</pdf> </li>
@@ -145,7 +154,8 @@ Video Enhancement [<a href='https://www.dropbox.com/scl/fi/hc0cbdqadiqh1lrxo3nxj
                 <h2 id="downloads">Downloads</h2>
                 <h5 id="UGteam">Publications</h5> 
                 <ul>
-                    <li><a>Visual enhancement and 3D representation for underwater scenes: a review</a>, G Huang, H Wang, B Seymour, E Kovacs, J Ellerbrock, D Blackham, N Anantrasirichai, Artificial Intelligence Review, 2026 [<a href="https://link.springer.com/article/10.1007/s10462-026-11597-4">PDF</a>] [<a href="https://arxiv.org/pdf/2505.01869">arXiv</a>] </li>
+                    <li><a>OceanXL: Large-scale Underwater 3D Gaussian Splatting via Block Partitioning and Adaptive Pruning</a>, H Wang, S Cai, A Azzarelli, Z Jiang, G Huang, ET Khoo, B Seymour, F Zhang, D Bull, N Anantrasirichai, ACM SIGGRAPH Asia, 2026 [<a  href="https://arxiv.org/abs/2609.29985" target="_blank">arXiv</a>] [<a href="https://wanghaoran16.github.io/OceanXL-Large-scale-Underwater-3D-Gaussian-Splatting/" target="_blank">Project</a>] [<a href="https://github.com/WangHaoran16/OceanXL-Large-scale-Underwater-3D-Gaussian-Splatting" target="_blank">Code</a>] [<a href="https://zenodo.org/records/21824088" target="_blank">Abyssal Dataset</a>] [<a href="https://zenodo.org/records/22960167" target="_blank">OceanXplore Dataset</a>] </li>
+                    <li><a>Visual enhancement and 3D representation for underwater scenes: a review</a>, G Huang, H Wang, B Seymour, E Kovacs, J Ellerbrock, D Blackham, N Anantrasirichai, Artificial Intelligence Review, 2026 [<a href="https://link.springer.com/article/10.1007/s10462-026-11597-4">PDF</a>] [<a href="https://arxiv.org/pdf/2505.01869">arXiv</a>] [<a href="https://github.com/edhuang1/Awesome-Underwater-Visual-Enhancement-and-3D-Reconstruction" target="_blank">Project</a>]</li>
                     <li><a>Prune Wisely, Reconstruct Sharply: Compact 3D Gaussian Splatting via Adaptive Pruning and Difference-of-Gaussian Primitives</a>. H Wang, G Huang, F Zhang, D Bull, and N Anantrasirichai, IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2026 <pdf>[</pdf><a href="https://arxiv.org/pdf/2602.24136">PDF</a><pdf>]</pdf> [<a href="https://github.com/WangHaoran16/Prune-Wisely-Reconstruct-Sharply/tree/main">Code</a>] </li>
                     <li><a>Bayesian Neural Networks for One-to-Many Mapping in Image Enhancement</a>. G Huang, Z Qi, RR Lin, Q Yang, D Bull, N Anantrasirichai,  AAAI Conference on Artificial Intelligence. 2026 [<a href="https://arxiv.org/pdf/2501.14265">PDF</a>] [<a href="https://github.com/BinCVER/BEM">CODE</a>]</li>
                     <li><a>RUSplatting: Robust 3D Gaussian Splatting for Sparse-View Underwater Scene Reconstruction</a>. Z Jiang, H Wang, G Huang, B Seymour and N Anantrasirichai, 36th British Machine Vision Conference. 2025 <pdf>[</pdf><a href="https://arxiv.org/pdf/2505.15737">PDF</a><pdf>]</pdf> <pdf>[</pdf><a href="https://github.com/theflash987/RUSplatting">CODE</a><pdf>]</pdf> [<a href='https://zenodo.org/records/15482420' target="_blank">Dataset</a>] </li>
@@ -163,10 +173,11 @@ Video Enhancement [<a href='https://www.dropbox.com/scl/fi/hc0cbdqadiqh1lrxo3nxj
                 </ul>
                 <h5 id="UGteam">Datasets</h5>
                 <ul>
-                    <li><a href="https://zenodo.org/records/11093417">BVI-Coral</a>: Underwater scenes for 3D reconstruction [<a href="https://zenodo.org/records/11093417">dataset</a>] </li>
-                    <li><a href="https://zenodo.org/records/14835876">S-UW</a>: Underwater images from shallow water areas [<a href="https://zenodo.org/records/14835876">dataset</a>]</li>
-                    <li><a href="https://zenodo.org/records/15482420">Submerged3D</a>: Deep underwater environments (in collaboration with National Park Service Submerged Resources Center) [<a href="https://zenodo.org/records/15482420">dataset</a>] </li>
-                    
+                    <li><a href="https://zenodo.org/records/11093417">BVI-Coral</a>: Underwater scenes for 3D reconstruction </li>
+                    <li><a href="https://zenodo.org/records/14835876">S-UW</a>: Underwater images from shallow water areas</li>
+                    <li><a href="https://zenodo.org/records/15482420">Submerged3D</a>: Deep underwater environments (in collaboration with National Park Service Submerged Resources Center) </li>
+                    <li><a href="https://zenodo.org/records/21824088" target="_blank">Abyssal</a>: Underwater scenes for large-scale 3D reconstruction (in collaboration with National Park Service Submerged Resources Center)</li>
+                    <li><a href="https://zenodo.org/records/22960167" target="_blank">OceanXplore</a>: Underwater scenes for large-scale 3D reconstruction (in collaboration with OceanX)</li>
                 </ul>
             </div>
             <hr />
